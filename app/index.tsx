@@ -3,25 +3,25 @@ import { Redirect } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 
 const IndexLayout = () => {
-    const [ loadView, setLoadView ] = useState<string | null>(null);
+    const [loadView, setLoadView] = useState<string | null>(null);
 
-    useEffect( () => {
-       
+    useEffect(() => {
+
         (async () => {
             const res = await getObjectAsyncStorage("isOnboarding");
             setLoadView(res?.status ? "signin" : "onboarding")
         })()
-        
-        return () => {};
-    
+
+        return () => { };
+
     }, [loadView]);
 
     return <>
-        {loadView === "signin" && <Redirect href="/signin" />}
+        {loadView === "signin" && <Redirect href="/createCommunity" />}
         {loadView === "onboarding" && <Redirect href="/onboarding" />}
     </>
-        
-      
+
+
 }
 
 export default IndexLayout;

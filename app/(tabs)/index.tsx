@@ -1,70 +1,64 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, View, FlatList } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { offlineImage } from '@/constants/images';
+import { Button } from 'react-native-paper';
+import { communityDummy } from '@/utils/dummyData';
+import CommunityList from '@/components/CommunityList';
+import { router } from 'expo-router';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+    <ThemedView style={styles.lightBg} className='bg-white px-2'>
+      <ThemedView className='mt-2 flex flex-row items-center px-2' style={styles.profileView}>
+        <View className=''>
+          <ThemedText type='subtitle' className=' font-normal text-base leading-6'>Good morning,</ThemedText>
+          <View className='flex gap-2 flex-row mt-1'>
+            <Image source={offlineImage.user_avatar} className='w-[27px] h-[27px]' />
+            <ThemedText className='font-bold text-lg leading-6 text-grey_900'>Okey Boy</ThemedText>
+          </View>
+        </View>
+        <View className='flex-row gap-4 justify-center'>
+          <AntDesign name="search1" size={24} color="#9CA3AF" />
+          <FontAwesome5 name="bell" size={24} color="#9CA3AF" />
+        </View>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
+      <View className='flex-row justify-center mt-4 gap-2'>
+        <Button
+          mode="contained"
+          textColor="#761022"
+          buttonColor='#F9FAFB'
+          className='rounded-lg py-2 px-[8px] font-medium text-xs leading-4 min-w-[113px]'
+        >Your Communities</Button>
+        <Button
+          icon='plus'
+          mode="contained"
+          textColor="#9CA3AF"
+          buttonColor='#F9FAFB'
+          className='rounded-lg py-2 px-[8px] font-medium text-xs leading-4 min-w-[111px]'
+          onPress={async () => {
+            router.push('/createCommunity')
+          }}
+        >Create New</Button>
+      </View>
+      <ThemedView className='px-2'>
+        <CommunityList />
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  lightBg: {
+    backgroundColor: '#ffffff',
+    flex: 1,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  profileView: {
+    display: 'flex',
+    justifyContent: 'space-between',
   },
 });

@@ -18,6 +18,9 @@ export const offlineImage = {
     checkedIcon: require('../assets/images/check-icon.png'),
     profile: require('../assets/images/profile.png'),
     phone: require('../assets/images/phone.png'),
+    user_avatar: require('../assets/images/user_avatar.png'),
+    people: require('../assets/images/people.png'),
+    red_camera: require('../assets/images/red_white_camera.png'),
     //Dark
     goBackIconDark: require('../assets/images/icon.png'),
     goBackDark: require('../assets/images/go-back-l.png'),
