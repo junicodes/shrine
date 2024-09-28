@@ -34,6 +34,9 @@ export default function RootLayout() {
         <Stack.Screen name="signin" />
         <Stack.Screen name="signup" />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="createCommunity" options={{ headerShown: false }} />
+        <Stack.Screen name='thePeople' options={{ headerShown: false }} />
+        <Stack.Screen name='singlePage' options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
