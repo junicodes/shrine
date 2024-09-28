@@ -17,7 +17,7 @@ const IndexLayout = () => {
     }, [loadView]);
 
     return <>
-        {loadView === "signin" && <Redirect href="/singlePage" />}
+        {loadView === "signin" && <Redirect href="/signin" />}
         {loadView === "onboarding" && <Redirect href="/onboarding" />}
     </>
 

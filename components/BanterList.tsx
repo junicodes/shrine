@@ -18,7 +18,7 @@ const BanterList = () => {
             <Image source={item.image} className="w-[41.98px] h-[41.98px]" />
             <View>
                 <Text className={`font-medium text-sm leading-5 text-grey_900`}>{item.title}</Text>
-                <Text className={`font-normal text-sm leading-5 text-grey_500`}>{item.msg}</Text>
+                <Text className={`font-normal text-sm leading-5 text-grey_500 !break-words`}>{item.msg}</Text>
             </View>
         </View>
     );
