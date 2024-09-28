@@ -21,6 +21,12 @@ export const offlineImage = {
     user_avatar: require('../assets/images/user_avatar.png'),
     people: require('../assets/images/people.png'),
     red_camera: require('../assets/images/red_white_camera.png'),
+    small_logo: require('../assets/images/small_logo.png'),
+    send: require('../assets/images/send.png'),
+    avatar_one: require('../assets/images/avatar_1.png'),
+    avatar_two: require('../assets/images/avatar_2.png'),
+    avatar_three: require('../assets/images/avatar_3.png'),
+    avatar_four: require('../assets/images/avatar_4.png'),
     //Dark
     goBackIconDark: require('../assets/images/icon.png'),
     goBackDark: require('../assets/images/go-back-l.png'),
