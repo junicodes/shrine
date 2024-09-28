@@ -31,7 +31,6 @@ export default function FormSignUp({}: any) {
 
    const navigation = useNavigation();
    let colorScheme = useColorScheme();
-   const isDark = colorScheme === 'dark'
 
     //Handler Function
     const handleFormSubmit = async (values: FormikValues, formikHelpers: FormikHelpers<GestureResponderEvent>) => {
