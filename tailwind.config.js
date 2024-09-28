@@ -5,4 +5,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  include: ["src/components", "custom.d.ts"]
 }
