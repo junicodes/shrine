@@ -4,6 +4,6 @@ import { Image} from "react-native";
 
 
 const LogoTitle = (props: any) => {
-    return <Image className={`w-22 h-8`} source={offlineImage.headerLogo} />;
+    return <Image className={`w-28 h-9`} source={offlineImage.headerLogo} />;
 };
 export default LogoTitle;

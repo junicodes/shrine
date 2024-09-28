@@ -16,6 +16,10 @@ export type FormPayload_SignIn = {
     password: string,
 }
 
+export type FormPayload_ResetPassword = {
+    email: string
+}
+
 //Directory - Props -- components/auth/SignUp | components/auth/FormSignup
 export type SignUpProps = {
     setCurrent: Dispatch<SetStateAction<string>>
@@ -31,4 +35,7 @@ export type FormPayload_Post = {
     type: string,
     tag: string[],
     file: any
+}
+export type FormPayload_VerifyTokenAuth = {
+    token: string
 }

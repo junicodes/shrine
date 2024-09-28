@@ -2,8 +2,11 @@ import { offlineImage } from "@/constants/images";
 import React from "react";
 import { Image, Pressable } from "react-native";
 import { Href, router } from 'expo-router';
+import { useColorScheme } from "nativewind";
 
 const GoBack = ({route}: {route: Href<string | object>}) => {
+    const { colorScheme } = useColorScheme();
+
     return <>
         <Pressable 
             style={({ pressed }) => ({
@@ -11,7 +14,7 @@ const GoBack = ({route}: {route: Href<string | object>}) => {
             })} 
             onPress={() => router.replace(route)}
         >
-            <Image source={offlineImage.goBackLight} />
+            <Image source={colorScheme === "light" ? offlineImage.goBackDark : offlineImage.goBackLight } />
         </Pressable>
     </>;
 };

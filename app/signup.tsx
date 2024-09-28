@@ -13,9 +13,9 @@ import SocialAuth from "@/components/auth/SocialAuth";
 import FormSignUp from "@/components/auth/FormSignUp";
 import GoBack from "@/components/shared/GoBack";
 import LogoTitle from "@/components/shared/LogoTitle";
+import PageHeader from "@/components/shared/PageHeader";
 
 const Signup = () => {
-  const { colorScheme } = useColorScheme();
 
   return (
     <PaperProvider>
@@ -25,20 +25,7 @@ const Signup = () => {
         >
 
             {/* Header Start */}
-            <Stack.Screen
-                options={{
-                  title: "Login",
-                  headerStyle: { backgroundColor: colorScheme === "light" ? Colors.light.background : Colors.dark.background },
-                  headerTintColor: colorScheme === "light" ? Colors.dark.background : Colors.light.background,
-                  headerTitleStyle: {
-                      fontWeight: "bold",
-                  },
-                  headerShadowVisible: false,
-                  headerTitle: (props) => <LogoTitle {...props} />,
-                  headerLeft: (props) => <GoBack route={"/signin"} {...props} />,
-                }}
-            />
-            {/* Header End */}
+            <PageHeader title={"Sign up"} goBackUrl={"/signin"} />
 
             {/* Body Start */}
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>

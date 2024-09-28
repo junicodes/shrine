@@ -28,3 +28,7 @@ export const countFormatter = (count: number): string => {
 
     return `${count}`
 }
+
+export const isNumeric = (num: any) => {
+    return !isNaN(num)
+}

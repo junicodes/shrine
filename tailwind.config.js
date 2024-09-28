@@ -12,4 +12,5 @@ module.exports = {
     },
   },
   plugins: [],
+  include: ["src/components", "custom.d.ts"]
 }
