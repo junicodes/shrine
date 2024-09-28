@@ -12,7 +12,7 @@ export const offlineImage = {
     inActiveOval: require('../assets/images/onboarding/inactive-oval.png'),
     splashScreen: require('../assets/images/onboarding/onboarding-bg.png'),
     headerLogo: require('../assets/images/onboarding/shrine-logo-2.png'),
-    goBackLight: require('../assets/images/go-back-l.png'),
+    goBackLight: require('../assets/images/go-back-white.png'),
     orDivide: require('../assets/images/or-divide.png'),
     eye: require('../assets/images/eye.png'),
     checkedIcon: require('../assets/images/check-icon.png'),
@@ -27,8 +27,8 @@ export const offlineImage = {
     avatar_two: require('../assets/images/avatar_2.png'),
     avatar_three: require('../assets/images/avatar_3.png'),
     avatar_four: require('../assets/images/avatar_4.png'),
+    appLogo: require('../assets/images/onboarding/shrine-logo.png'),
     //Dark
-    goBackIconDark: require('../assets/images/icon.png'),
     goBackDark: require('../assets/images/go-back-l.png'),
 }
 
