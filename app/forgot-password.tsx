@@ -2,7 +2,7 @@ import { ThemedView } from "@/components/ThemedView";
 import { offlineImage } from "@/constants/images";
 import React, { useEffect, useState } from "react";
 import { Image, Text, Keyboard, Pressable, ScrollView, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
-import { PaperProvider, TextInput } from "react-native-paper";
+import { Button, PaperProvider, TextInput } from "react-native-paper";
 import { Stack } from "expo-router";
 import { useColorScheme } from "nativewind";
 import { Colors } from "@/constants/Colors";
@@ -86,26 +86,59 @@ const ForgotPassword = () => {
                             <ThemedText type='subtitle' className="mb-4">
                                 Select verification method and we will send verification code
                             </ThemedText>
-                            <View className={`flex flex-row space-x-3 p-4 border ${ selected === "email" ? 'border-[#761022]' : 'border-[#9CA3AF]' } my-2 items-center rounded-2xl`}>
-                              <SVGEmail stroke={ selected === "email" ? "#761022" : "#9CA3AF"} />
-                              <View>
-                                <ThemedText className='text-left font-bold'>
-                                  Email
-                                </ThemedText>
-                                <ThemedText type='subtitle'>
-                                  Send to your email
-                                </ThemedText>
-                              </View>
-                            </View>
-                            <View className={`flex flex-row space-x-3 p-4 border ${ selected === "phone" ? 'border-[#761022]' : 'border-[#9CA3AF]' } my-2 items-center rounded-2xl`}>
-                              <SVGPhone stroke={ selected === "phone" ? "#761022" : "#9CA3AF"} />
-                              <View>
-                                <ThemedText className='text-left font-bold'>
-                                  Phone Number
-                                </ThemedText>
-                                <ThemedText type='subtitle'>
-                                  Send to your phone number
-                                </ThemedText>
+                            <View className="h-full">
+                              <TouchableOpacity
+                                onPress={() => {
+                                  setSelected("email")
+                                }}
+                              >
+                                <View className={`flex flex-row space-x-3 p-4 border ${ selected === "email" ? 'border-[#761022]' : 'border-[#9CA3AF]' } my-2 items-center rounded-2xl`}>
+                                  <SVGEmail stroke={ selected === "email" ? "#761022" : "#9CA3AF"} />
+                                  <View>
+                                    <ThemedText className='text-left font-bold'>
+                                      Email
+                                    </ThemedText>
+                                    <ThemedText type='subtitle'>
+                                      Send to your email
+                                    </ThemedText>
+                                  </View>
+                                </View>
+                              </TouchableOpacity>
+                              <TouchableOpacity
+                                onPress={() => {
+                                  setSelected("phone")
+                                }}
+                              >
+                                  <View className={`flex flex-row space-x-3 p-4 border ${ selected === "phone" ? 'border-[#761022]' : 'border-[#9CA3AF]' } my-2 items-center rounded-2xl`}>
+                                    <SVGPhone stroke={ selected === "phone" ? "#761022" : "#9CA3AF"} />
+                                    <View>
+                                      <ThemedText className='text-left font-bold'>
+                                        Phone Number
+                                      </ThemedText>
+                                      <ThemedText type='subtitle'>
+                                        Send to your phone number
+                                      </ThemedText>
+                                    </View>
+                                  </View>
+                              </TouchableOpacity>
+                              <View className={`w-full mx-auto pt-6 absolute bottom-48`}>
+                                <Button
+                                    icon=""
+                                    mode="contained"
+                                    textColor="white"
+                                    labelStyle={{fontSize: 16}}
+                                    buttonColor="#7f1d1d"
+                                    rippleColor="#7F1D1D7A"
+                                    className={`rounded-xl h-14 justify-center`}
+                                    onPress={ async () => {
+                                        // await saveObjectAsyncStorage('isOnboarding', {status: true});
+                                        return router.push({ pathname: `/reset-password`, params: {
+                                          activeScreen: selected
+                                        }});
+                                    }}
+                                >
+                                    Next
+                                </Button>
                               </View>
                             </View>
                         </FadeInView>

@@ -3,7 +3,7 @@ import { offlineImage } from "@/constants/images";
 import React, { useEffect, useState } from "react";
 import { Image, Text, Keyboard, Pressable, ScrollView, TouchableOpacity, TouchableWithoutFeedback, View, GestureResponderEvent, TextInput, Dimensions } from "react-native";
 import { Button, PaperProvider } from "react-native-paper";
-import { Stack, useNavigation } from "expo-router";
+import { Stack, useLocalSearchParams, useNavigation } from "expo-router";
 import { useColorScheme } from "nativewind";
 import { Colors } from "@/constants/Colors";
 import { router } from 'expo-router';
@@ -24,7 +24,7 @@ import { Formik, FormikValues, FormikHelpers } from "formik";
 
 const ResetPassword = () => {
   // Local States
-  const [activeScreen, setActiveScreen ] = useState("email") // phone, email
+  const { activeScreen } = useLocalSearchParams(); 
   const [isLoading, setIsLoading] = useState(false)
   const [counter, setCounter] = useState(59);
   const [token, setToken] = useState("")
@@ -32,7 +32,6 @@ const ResetPassword = () => {
   const [payload, setPayload] = useState<FormPayload_ResetPassword>({
       email: ''
   })
-  
 
   //Hooks
   useEffect(() => {
@@ -174,7 +173,7 @@ const ResetPassword = () => {
                                                 </View>
                                             )
                                         }
-                                        <View className={`w-full mx-auto pt-6 absolute bottom-40 bottom-44`}>
+                                        <View className={`w-full mx-auto pt-6 absolute bottom-48`}>
                                             <Button
                                                 icon=""
                                                 mode="contained"
@@ -185,7 +184,7 @@ const ResetPassword = () => {
                                                 className={`rounded-xl h-14 justify-center`}
                                                 onPress={ async () => {
                                                     // await saveObjectAsyncStorage('isOnboarding', {status: true});
-                                                    // return router.replace("/registration")
+                                                    return router.push({ pathname: `/verify-code`});
                                                 }}
                                             >
                                                 Send Link

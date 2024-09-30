@@ -24,6 +24,7 @@ const VerifyCode = () => {
   const [counter, setCounter] = useState(59);
   const [token, setToken] = useState("")
   const [maskedEmail, setMaskedEmail] = useState("Okechukwu****@gmail.com");
+  const [headerShown, setHeaderShown] = useState(true);
 
   
   useEffect(() => {
@@ -47,10 +48,12 @@ const VerifyCode = () => {
     if(!isNumeric(token)) return false;
 
     if(token.length >= 5) {
+      setHeaderShown(false)
         setIsLoading(true)
 
         setTimeout(() => {
             setIsLoading(false);
+            setHeaderShown(true)
             setToken("")
         }, 5000)
     }
@@ -71,14 +74,14 @@ const VerifyCode = () => {
             showsVerticalScrollIndicator={false}
         >
             {/* Header Start */}
-            <PageHeader title={"Verify Code"} goBackUrl={"/forgot-password"} />
+            <PageHeader title={"Verify Code"} headerShown={headerShown} goBackUrl={"/forgot-password"} />
             
             {/* Body Start */}
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                <View className="flex-1">
                     <ThemedView className="flex-1">
                         <FadeInView>  
-                            <ThemedText type='title' className='text-left'>
+                            <ThemedText type='title' className={`text-left ${headerShown ? "pt-0" : "pt-10"}`}>
                                 Verify Code
                             </ThemedText>
                             <ThemedText type='subtitle'>
@@ -90,9 +93,9 @@ const VerifyCode = () => {
                             {
                                 counter === 0 ?
                                 <TouchableOpacity onPress={handleResendToken}>
-                                    <Text className="text-center font-normal mt-8 underline">
+                                    <ThemedText className="text-center font-normal mt-8 underline">
                                         Resend verification token
-                                    </Text>
+                                    </ThemedText>
                                 </TouchableOpacity>
                                 : 
                                 <ThemedText className="text-center font-normal mt-8">

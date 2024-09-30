@@ -13,8 +13,6 @@ import { ThemedText } from '../ThemedText';
 import { offlineImage } from '@/constants/images';
 import { ThemedView } from '../ThemedView';
 
-
-
 export default function FormSignUp({}: any) {
   //States
   const [checked, setChecked] = React.useState(false);
