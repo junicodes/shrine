@@ -17,15 +17,17 @@ export const offlineImage = {
     eye: require('../assets/images/eye.png'),
     checkedIcon: require('../assets/images/check-icon.png'),
     profile: require('../assets/images/profile.png'),
-<<<<<<< HEAD
     phone: require('../assets/images/phone.png'),
     user_avatar: require('../assets/images/user_avatar.png'),
     people: require('../assets/images/people.png'),
     red_camera: require('../assets/images/red_white_camera.png'),
-=======
-    phone: require('../assets/images/phone.png'), 
+    small_logo: require('../assets/images/small_logo.png'),
+    send: require('../assets/images/send.png'),
+    avatar_one: require('../assets/images/avatar_1.png'),
+    avatar_two: require('../assets/images/avatar_2.png'),
+    avatar_three: require('../assets/images/avatar_3.png'),
+    avatar_four: require('../assets/images/avatar_4.png'),
     appLogo: require('../assets/images/onboarding/shrine-logo.png'),
->>>>>>> dadde5ac0d98e30b5aa4cb4aa39bdf2c6ddb05af
     //Dark
     goBackDark: require('../assets/images/go-back-l.png'),
 }

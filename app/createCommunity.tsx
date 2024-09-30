@@ -9,9 +9,10 @@ import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity } from 'reac
 import { Button } from 'react-native-paper'
 
 interface FormPayloadCreateCommunity {
-    image: '',
-    communityName: '',
-    description: '',
+    image: string;
+    communityName: string;
+    description: string;
+    is_private: boolean;
 }
 
 const createCommunity = () => {
@@ -20,13 +21,14 @@ const createCommunity = () => {
         image: '',
         communityName: '',
         description: '',
+        is_private: false,
     });
 
     const handleFormSubmit = () => { };
 
     return (
         <ThemedView className='px-3' style={styles.lightBg}>
-            <View className='mt-8 flex-row'>
+            <View className='mt-4 flex-row'>
                 <TabBarIcon name='arrow-back' color={'#111827'} />
                 <Text className='font-bold text-xl leading-8 text-grey_900 mx-auto'>Create Community</Text>
             </View>
@@ -50,9 +52,9 @@ const createCommunity = () => {
                                     placeholder="Community name"
                                     placeholderTextColor="#ABAFB3"
                                     keyboardType="email-address"
-                                    onChangeText={props.handleChange('email')}
-                                    value={props.values.email}
-                                    onBlur={props.handleBlur('email')}
+                                    onChangeText={props.handleChange('communityName')}
+                                    value={props.values.communityName}
+                                    onBlur={props.handleBlur('communityName')}
                                     maxLength={20}
                                 />
                             </View>
@@ -65,9 +67,9 @@ const createCommunity = () => {
                                     placeholder="In a few sentences, describe what your community is about"
                                     placeholderTextColor="#ABAFB3"
                                     keyboardType="default"
-                                    onChangeText={props.handleChange('email')}
-                                    value={props.values.email}
-                                    onBlur={props.handleBlur('email')}
+                                    onChangeText={props.handleChange('description')}
+                                    value={props.values.description}
+                                    onBlur={props.handleBlur('description')}
                                     multiline={true}
                                     style={styles.textArea}
                                     maxLength={100}
@@ -116,7 +118,6 @@ const styles = StyleSheet.create({
     lightBg: {
         backgroundColor: '#ffffff',
         flex: 1,
-        // minHeight: 100,
     },
     textArea: {
         textAlignVertical: 'top',

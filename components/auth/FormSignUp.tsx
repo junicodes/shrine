@@ -13,8 +13,6 @@ import { ThemedText } from '../ThemedText';
 import { offlineImage } from '@/constants/images';
 import { ThemedView } from '../ThemedView';
 
-
-
 export default function FormSignUp({}: any) {
   //States
   const [checked, setChecked] = React.useState(false);
@@ -31,7 +29,6 @@ export default function FormSignUp({}: any) {
 
    const navigation = useNavigation();
    let colorScheme = useColorScheme();
-   const isDark = colorScheme === 'dark'
 
     //Handler Function
     const handleFormSubmit = async (values: FormikValues, formikHelpers: FormikHelpers<GestureResponderEvent>) => {

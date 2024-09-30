@@ -7,7 +7,10 @@ module.exports = {
         grey_900: '#111827',
         grey_400: '#9CA3AF',
         grey_200: '#E5E7EB',
+        grey_500: '#6B7280',
+        gret_50: '#F9FAFB',
         primary_900: '#761022',
+
       }
     },
   },

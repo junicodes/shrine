@@ -13,13 +13,13 @@ import { router } from 'expo-router';
 
 export default function HomeScreen() {
   return (
-    <ThemedView style={styles.lightBg} className='bg-white px-2'>
+    <ThemedView className='px-2'>
       <ThemedView className='mt-2 flex flex-row items-center px-2' style={styles.profileView}>
         <View className=''>
           <ThemedText type='subtitle' className=' font-normal text-base leading-6'>Good morning,</ThemedText>
           <View className='flex gap-2 flex-row mt-1'>
             <Image source={offlineImage.user_avatar} className='w-[27px] h-[27px]' />
-            <ThemedText className='font-bold text-lg leading-6 text-grey_900'>Okey Boy</ThemedText>
+            <ThemedText className='font-bold text-lg leading-6'>Okey Boy</ThemedText>
           </View>
         </View>
         <View className='flex-row gap-4 justify-center'>
@@ -27,7 +27,7 @@ export default function HomeScreen() {
           <FontAwesome5 name="bell" size={24} color="#9CA3AF" />
         </View>
       </ThemedView>
-      <View className='flex-row justify-center mt-4 gap-2'>
+      <View className='flex-row justify-left mt-4 gap-2 px-2'>
         <Button
           mode="contained"
           textColor="#761022"
