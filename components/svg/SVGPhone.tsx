@@ -21,3 +21,4 @@ const SVGPhone = (props: React.JSX.IntrinsicAttributes & React.JSX.IntrinsicClas
   </Svg>
 )
 export default SVGPhone;
+

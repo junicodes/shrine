@@ -11,16 +11,18 @@ export const Colors = {
   light: {
     text: '#000',
     background: '#fff',
+    svg: '#fff',
     tint: tintColorRed,
-    icon: '#687076',
+    icon: '#9CA3AF', //#687076
     tabIconDefault: '#687076',
     tabIconSelected: tintColorRed,
   },
   dark: {
     text: '#ECEDEE',
     background: '#151718',
+    svg: '#151718',
     tint: tintColorDark,
-    icon: '#9BA1A6',
+    icon: '#9CA3AF', // #9BA1A6
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
   },

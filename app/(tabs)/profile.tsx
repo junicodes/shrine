@@ -2,7 +2,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const profile = () => {
+const Profile = () => {
   return (
     <View>
         <Text>Profile</Text>
@@ -10,4 +10,4 @@ const profile = () => {
   )
 }
 
-export default profile
+export default Profile
