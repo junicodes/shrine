@@ -28,6 +28,9 @@ export const offlineImage = {
     avatar_three: require('../assets/images/avatar_3.png'),
     avatar_four: require('../assets/images/avatar_4.png'),
     appLogo: require('../assets/images/onboarding/shrine-logo.png'),
+    empty: require('../assets/images/empty.png'),
+    profile_circle: require('../assets/images/profile_circle.png'),
+    filter: require('../assets/images/filter.png'),
     //Dark
     goBackDark: require('../assets/images/go-back-l.png'),
 }

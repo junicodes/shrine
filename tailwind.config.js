@@ -5,12 +5,14 @@ module.exports = {
     extend: {
       colors: {
         grey_900: '#111827',
+        grey_100: '#F3F4F6',
         grey_400: '#9CA3AF',
         grey_200: '#E5E7EB',
         grey_500: '#6B7280',
         gret_50: '#F9FAFB',
+        natural_grey_900: '#1D2739',
         primary_900: '#761022',
-
+        primary_50: '#F1E7E9',
       }
     },
   },
