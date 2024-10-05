@@ -16,7 +16,6 @@ import TokenInput from "@/components/auth/TokenInput";
 import PageHeader from "@/components/shared/PageHeader";
 import LoadingSpinner from "@/components/shared/LoadingSpinner";
 import { isNumeric } from "@/constants/helperFunctions";
-import IconApp from '../assets/images/fp_email.svg'
 import SVGEmail from "@/components/svg/SVGEmail";
 import SVGPhone from "@/components/svg/SVGPhone";
 
