@@ -26,15 +26,15 @@ const VerifyCode = () => {
   const [maskedEmail, setMaskedEmail] = useState("Okechukwu****@gmail.com");
   const [headerShown, setHeaderShown] = useState(true);
 
-  
+
   useEffect(() => {
-    
-    if(counter > 0) {
+
+    if (counter > 0) {
       const counter = setInterval(() => {
         setCounter((counter) => counter - 1)
       }, 1000);
 
-      return () => { clearInterval(counter)};
+      return () => { clearInterval(counter) };
     }
 
   }, [counter]);
@@ -45,17 +45,17 @@ const VerifyCode = () => {
 
   const submitTokenRequest = (token: string) => {
 
-    if(!isNumeric(token)) return false;
+    if (!isNumeric(token)) return false;
 
-    if(token.length >= 5) {
+    if (token.length >= 5) {
       setHeaderShown(false)
-        setIsLoading(true)
+      setIsLoading(true)
 
-        setTimeout(() => {
-            setIsLoading(false);
-            setHeaderShown(true)
-            setToken("")
-        }, 5000)
+      setTimeout(() => {
+        setIsLoading(false);
+        setHeaderShown(true)
+        setToken("")
+      }, 5000)
     }
   }
 
@@ -68,47 +68,47 @@ const VerifyCode = () => {
 
   return (
     <PaperProvider>
-     
-        <ScrollView
-            contentContainerStyle={{ flexGrow: 1 }}
-            showsVerticalScrollIndicator={false}
-        >
-            {/* Header Start */}
-            <PageHeader title={"Verify Code"} headerShown={headerShown} goBackUrl={"/forgot-password"} />
-            
-            {/* Body Start */}
-            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-               <View className="flex-1">
-                    <ThemedView className="flex-1">
-                        <FadeInView>  
-                            <ThemedText type='title' className={`text-left ${headerShown ? "pt-0" : "pt-10"}`}>
-                                Verify Code
-                            </ThemedText>
-                            <ThemedText type='subtitle'>
-                            Please enter the code we just sent to your mail&nbsp;
-                            {maskedEmail}
-                            </ThemedText>
-                        
-                            <TokenInput onHandleVerifyToken={(token) => setToken(token)} />
-                            {
-                                counter === 0 ?
-                                <TouchableOpacity onPress={handleResendToken}>
-                                    <ThemedText className="text-center font-normal mt-8 underline">
-                                        Resend verification token
-                                    </ThemedText>
-                                </TouchableOpacity>
-                                : 
-                                <ThemedText className="text-center font-normal mt-8">
-                                    Re-send code in <Text style={[ {color: "#7f1d1d"}]}>0:{counter}</Text>
-                                </ThemedText>
-                            }
-                        </FadeInView>
-                    </ThemedView>
-                    {isLoading && <LoadingSpinner />}
-               </View>
-            </TouchableWithoutFeedback>
-            {/* Body End */}
-        </ScrollView>
+
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1 }}
+        showsVerticalScrollIndicator={false}
+      >
+        {/* Header Start */}
+        <PageHeader title={"Verify Code"} headerShown={headerShown} goBackUrl={"/forgot-password"} />
+
+        {/* Body Start */}
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View className="flex-1">
+            <ThemedView className="flex-1">
+              <FadeInView>
+                <ThemedText type='title' className={`text-left ${headerShown ? "pt-0" : "pt-10"}`}>
+                  Verify Code
+                </ThemedText>
+                <ThemedText type='subtitle'>
+                  Please enter the code we just sent to your mail&nbsp;
+                  {maskedEmail}
+                </ThemedText>
+
+                <TokenInput onHandleVerifyToken={(token) => setToken(token)} />
+                {
+                  counter === 0 ?
+                    <TouchableOpacity onPress={handleResendToken}>
+                      <ThemedText className="text-center font-normal mt-8 underline">
+                        Resend verification token
+                      </ThemedText>
+                    </TouchableOpacity>
+                    :
+                    <ThemedText className="text-center font-normal mt-8">
+                      Re-send code in <Text style={[{ color: "#7f1d1d" }]}>0:{counter}</Text>
+                    </ThemedText>
+                }
+              </FadeInView>
+            </ThemedView>
+            {isLoading && <LoadingSpinner />}
+          </View>
+        </TouchableWithoutFeedback>
+        {/* Body End */}
+      </ScrollView>
     </PaperProvider>
   );
 };
