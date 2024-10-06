@@ -22,7 +22,6 @@ const singlePage = () => {
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-
                 <ThemedView className='px-2' style={styles.bgBody}>
                     <View className={`mt-10 flex-row justify-between items-center`}>
                         <TabBarIcon name='arrow-back' color={'#111827'} />
@@ -37,7 +36,6 @@ const singlePage = () => {
                         <View className='w-[219px] h-[1px] border-[0.87px] border-grey_200'></View>
                     </View>
                     <BanterList />
-
                     <KeyboardStickyView>
                         <View className={`h-[60px] bottom-0 w-screen`}>
                             <View className='h-[80px] my-auto'>

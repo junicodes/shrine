@@ -3,6 +3,7 @@ import React from "react";
 import { Image, Pressable } from "react-native";
 import { Href, router } from 'expo-router';
 import { useColorScheme } from "nativewind";
+import { TabBarIcon } from "../navigation/TabBarIcon";
 
 const GoBack = ({route}: {route: Href<string | object>}) => {
     const { colorScheme } = useColorScheme();

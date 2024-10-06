@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, View, FlatList } from 'react-native';
+import { Image, StyleSheet, Platform, View, FlatList, Dimensions } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -13,12 +13,12 @@ import { useColorScheme } from 'nativewind';
 
 export default function HomeScreen() {
 
-  let colorScheme = useColorScheme();
-
+  const { colorScheme, setColorScheme } = useColorScheme();
+  const screenHeight = Dimensions.get('window').height - 250 
   
   return (
-    <ThemedView className='px-2'>
-      <ThemedView className='mt-2 flex flex-row items-center px-2' style={styles.profileView}>
+    <ThemedView>
+      <View className='mt-2 flex flex-row items-center py-5' style={styles.profileView}>
         <View className=''>
           <ThemedText type='subtitle' className=' font-normal text-base leading-6'>Good morning,</ThemedText>
           <View className='flex gap-2 flex-row mt-1'>
@@ -30,29 +30,29 @@ export default function HomeScreen() {
           <AntDesign name="search1" size={24} color="#9CA3AF" />
           <FontAwesome5 name="bell" size={24} color="#9CA3AF" />
         </View>
-      </ThemedView>
-      <View className='flex-row justify-left mt-4 gap-2 px-2'>
+      </View>
+      <View className='flex-row justify-left mt-4 gap-2'>
         <Button
           mode="contained"
-          textColor="#761022"
-          buttonColor='#F9FAFB'
-          className='rounded-lg py-2 px-[8px] font-medium text-xs leading-4 min-w-[113px]'
+          textColor={colorScheme === "light" ? "#761022" : "#9CA3AF"}
+          buttonColor={colorScheme === "light" ? "#F9FAFB" : "bg-none"}
+          className={`rounded-lg py-2 px-[8px] font-medium text-xs leading-4 min-w-[113px] border ${colorScheme === "light" ? "border-none" : "border-gray-500"}`}
         >Your Communities</Button>
         <Button
           icon='plus'
           mode="contained"
           textColor="#9CA3AF"
-          buttonColor='#F9FAFB'
-          className='rounded-lg py-2 px-[8px] font-medium text-xs leading-4 min-w-[111px]'
+          buttonColor={colorScheme === "light" ? "#F9FAFB" : "bg-none"}
+          className={`rounded-lg py-2 px-[8px] font-medium text-xs leading-4 min-w-[111px] border ${colorScheme === "light" ? "border-none" : "border-gray-500"}`}
           onPress={async () => {
-            router.push('/createCommunity')
+            router.push('/create-community')
           }}
         >Create New</Button>
       </View>
-      <ThemedView className='px-2'>
+      <View style={{height: screenHeight }}>
         <CommunityList />
-      </ThemedView>
-    </ThemedView>
+      </View>
+    </ThemedView>   
   );
 }
 

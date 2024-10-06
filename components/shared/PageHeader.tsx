@@ -4,8 +4,9 @@ import { Colors } from "@/constants/Colors";
 import { useColorScheme } from 'nativewind';
 import LogoTitle from './LogoTitle';
 import GoBack from './GoBack';
+import { ThemedText } from '../ThemedText';
 
-const PageHeader = ({ title, headerShown= true, goBackUrl = "/signup" }: {title: string, headerShown?: boolean, goBackUrl: Href<string | object>}) => {
+const PageHeader = ({ title, headerShown= true, goBackUrl }: {title: string, headerShown?: boolean, goBackUrl?: Href<string | object>}) => {
   const { colorScheme } = useColorScheme();
 
   return (
@@ -13,6 +14,7 @@ const PageHeader = ({ title, headerShown= true, goBackUrl = "/signup" }: {title:
         options={{
             title,
             headerShown,
+            headerBackVisible: false,
             headerStyle: { backgroundColor: colorScheme === "light" ? Colors.light.background : Colors.dark.background },
             headerTintColor: colorScheme === "light" ? Colors.dark.background : Colors.light.background,
             headerTitleStyle: {
@@ -20,8 +22,8 @@ const PageHeader = ({ title, headerShown= true, goBackUrl = "/signup" }: {title:
             },
             headerShadowVisible: false,
             headerTitleAlign: "center",
-            headerTitle: (props) => <LogoTitle {...props} />,
-            headerLeft: (props) => <GoBack route={goBackUrl} {...props} />,
+            headerTitle: (props) => title ? <ThemedText>{title}</ThemedText> : <LogoTitle {...props} />,
+            headerLeft: (props) => goBackUrl ? <GoBack route={goBackUrl} {...props} /> : null,
         }}
     />
   )
