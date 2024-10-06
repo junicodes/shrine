@@ -10,9 +10,11 @@ module.exports = {
         grey_200: '#E5E7EB',
         grey_500: '#6B7280',
         gret_50: '#F9FAFB',
+        grey_4f6: '#F4F4F6',
         natural_grey_900: '#1D2739',
         primary_900: '#761022',
         primary_50: '#F1E7E9',
+        others_red: '#E22E31',
       }
     },
   },

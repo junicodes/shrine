@@ -31,6 +31,7 @@ export const offlineImage = {
     empty: require('../assets/images/empty.png'),
     profile_circle: require('../assets/images/profile_circle.png'),
     filter: require('../assets/images/filter.png'),
+    user_red: require('../assets/images/user_red.png'),
     //Dark
     goBackDark: require('../assets/images/go-back-l.png'),
 }
