@@ -40,6 +40,7 @@ export default function RootLayout() {
         <Stack.Screen name="create-community" options={{ headerShown: false }} />
         <Stack.Screen name='thePeople' options={{ headerShown: false }} />
         <Stack.Screen name='singlePage' options={{ headerShown: false }} />
+        <Stack.Screen name='settings' options={{ headerShown: false }} />
         <Stack.Screen name='account' options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>

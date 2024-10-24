@@ -22,7 +22,7 @@ const PageHeader = ({ title, headerShown= true, goBackUrl }: {title: string, hea
             },
             headerShadowVisible: false,
             headerTitleAlign: "center",
-            headerTitle: (props) => title ? <ThemedText>{title}</ThemedText> : <LogoTitle {...props} />,
+            headerTitle: (props) => title ? <ThemedText  type='defaultSemiBold'>{title}</ThemedText> : <LogoTitle {...props} />,
             headerLeft: (props) => goBackUrl ? <GoBack route={goBackUrl} {...props} /> : null,
         }}
     />

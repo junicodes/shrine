@@ -10,6 +10,7 @@ import React, { useState } from 'react'
 import { Button } from 'react-native-paper';
 import { TextInput, View, useColorScheme, Image, Text, Pressable } from 'react-native'
 import { router } from 'expo-router';
+import PageHeader from '@/components/shared/PageHeader'
 
 
 const Account = () => {
@@ -27,10 +28,7 @@ const Account = () => {
 
     return (
         <ThemedView className='px-2 flex-1'>
-            <View className='flex-row justify-between mt-6'>
-                <TabBarIcon name='arrow-back' color={color === 'dark' ? '#ffffff' : '#000000'} />
-                <ThemedText className='font-bold text-xl leading-7 mx-auto text-grey_900'>My Account</ThemedText>
-            </View>
+            <PageHeader title={'My Account'} goBackUrl={'/(tabs)/profile'} />
             <View className={`h-[157px]`}>
                 <ImageProfile />
             </View>

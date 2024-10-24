@@ -14,7 +14,7 @@ import { useColorScheme } from 'nativewind';
 export default function HomeScreen() {
 
   const { colorScheme, setColorScheme } = useColorScheme();
-  const screenHeight = Dimensions.get('window').height - 250 
+  const screenHeight = Dimensions.get('window').height - 300 
   
   return (
     <ThemedView>
@@ -31,7 +31,7 @@ export default function HomeScreen() {
           <FontAwesome5 name="bell" size={24} color="#9CA3AF" />
         </View>
       </View>
-      <View className='flex-row justify-left mt-4 gap-2'>
+      <View className='flex-row justify-left mt-4 gap-2 pb-4'>
         <Button
           mode="contained"
           textColor={colorScheme === "light" ? "#761022" : "#9CA3AF"}
