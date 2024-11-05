@@ -32,6 +32,10 @@ export const offlineImage = {
     profile_circle: require('../assets/images/profile_circle.png'),
     filter: require('../assets/images/filter.png'),
     user_red: require('../assets/images/user_red.png'),
+    shirt: require('../assets/images/shirt.png'),
+    laptop: require('../assets/images/laptop.png'),
+    salad: require('../assets/images/salad.png'),
+    emptyCardImg: require('../assets/images/empty_card.png'),
     //Dark
     goBackDark: require('../assets/images/go-back-l.png'),
 }

@@ -1,12 +1,10 @@
 import { Image, StyleSheet, Platform, View, FlatList } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { offlineImage } from '@/constants/images';
 import { Button } from 'react-native-paper';
-import { communityDummy } from '@/utils/dummyData';
 import CommunityList from '@/components/CommunityList';
 import { router } from 'expo-router';
 import { useColorScheme } from 'nativewind';
@@ -15,7 +13,7 @@ export default function HomeScreen() {
 
   let colorScheme = useColorScheme();
 
-  
+
   return (
     <ThemedView className='px-2'>
       <ThemedView className='mt-2 flex flex-row items-center px-2' style={styles.profileView}>
