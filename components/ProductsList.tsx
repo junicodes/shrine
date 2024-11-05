@@ -14,19 +14,12 @@ interface Product {
 };
 
 const ProductsList = () => {
-    // Group items in pairs for 2-column layout
-    // const groupedData = products.reduce((result, item, index) => {
-    //     if (index % 2 === 0) result.push([item]);
-    //     else result[result.length - 1].push(item);
-    //     return result;
-    // }, []);
-
     const renderItem = ({ item }: { item: { img: any, title: string, price: string } }) => (
         <View className='w-[45%] p-2'>
             <View className={`gap-[13.3px]`}>
                 <Image source={item.img} className={`w-full rounded-[8.87px] h-[164.04px]`} />
-                <ThemedText>{item.title}</ThemedText>
-                <ThemedText>{item.price}</ThemedText>
+                <ThemedText className='font-normal text-sm leading-5 text-grey_900'>{item.title}</ThemedText>
+                <ThemedText className={`font-normal text-xs leading-4 text-grey_500`}>{item.price}</ThemedText>
             </View>
         </View>
     )

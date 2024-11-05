@@ -1,7 +1,8 @@
 import React from 'react';
-import { ThemedView } from './ThemedView';
+
 import { FlatList, Image, Text, View } from 'react-native';
 import { foodTypes } from './shared/dummyData';
+import { ThemedText } from './ThemedText';
 
 const CategoryList = () => {
     const renderItem = ({ item }: { item: { name: string, image: any } }) => (
@@ -9,7 +10,7 @@ const CategoryList = () => {
             <View className={`bg-gret_50 rounded-[100px] py-[5px] px-[10px] w-[40px] h-[34px]`}>
                 <Image source={item.image} className='w-[20px] h-[24px]' />
             </View>
-            <Text className={`font-medium text-xs leading-4 text-of`}>{item.name}</Text>
+            <ThemedText className={`font-medium text-xs leading-4 text-of`}>{item.name}</ThemedText>
         </View>
     );
 

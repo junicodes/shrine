@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { offlineImage } from "@/constants/images";
@@ -9,6 +9,8 @@ import CategoryList from "@/components/CategoryList";
 import ProductsList from "@/components/ProductsList";
 
 const Home = () => {
+  const [view, setView] = useState<string>('market');
+
   return (
     <ThemedView className="px-2 flex-1">
       <ThemedView className="mt-2 flex flex-row items-center px-2 justify-between">
@@ -39,12 +41,14 @@ const Home = () => {
           <Button
             textColor="#761022"
             className="bg-gret_50 px-[10px] py-2 rounded-lg text-xs leading-4"
+            onPress={() => setView('market')}
           >
             Market PLace
           </Button>
           <Button
             textColor="#9CA3AF"
             className="bg-gret_50 px-[10px] py-2 rounded-lg"
+            onPress={() => setView('events')}
           >
             Events
           </Button>
@@ -57,12 +61,16 @@ const Home = () => {
           </Button>
         </View>
       </View>
-      <ThemedView className={`mt-4 px-2`}>
-        <CategoryList />
-      </ThemedView>
-      <ThemedView className={`mt-4 px-2`}>
-        <ProductsList />
-      </ThemedView>
+      {view === 'market' && (
+        <>
+          <ThemedView className={`mt-4 px-2`}>
+            <CategoryList />
+          </ThemedView>
+          <ThemedView className={`mt-4 px-2`}>
+            <ProductsList />
+          </ThemedView>
+        </>
+      )}
     </ThemedView>
   );
 };
