@@ -1,16 +1,19 @@
 import React from 'react';
 import { Button } from 'react-native-paper';
-import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, Dimensions } from 'react-native';
 import { communityDummy } from '@/utils/dummyData';
 import { ThemedText } from './ThemedText';
 import { useColorScheme } from 'nativewind';
 
 export default function CommunityList() {
     let { colorScheme } = useColorScheme();
-
-    // colorScheme === 'dark'
-    const renderItem = ({ item }: { item: { name: string; image: any } }) => (
-        <View className={`mt-6 py-[18px] px-[17px] rounded-2xl border ${ colorScheme == 'dark' ? "border-grey_500" : "border-grey_200"} flex-row items-center justify-between gap-[0.625rem]`}>
+    
+    const renderItem = ({ item, index }: { item: { name: string; image: any }, index: number }) => (
+        <View style={{flex: 1 }} className={`mt-4 py-[18px]
+            ${ colorScheme == 'dark' ? "border-grey_500" : "border-grey_200"} 
+            ${ communityDummy.length - 1 === index ? "border-b-none" : "border-b" }
+            flex-row items-center justify-between gap-[0.625rem]`}
+        >
             <View>
                 <ThemedText className='font-medium text-base leading-6'>{item.name}</ThemedText>
                 <Image source={item.image} className='w-[127.32px] h-[32px] mt-3' />
@@ -29,7 +32,7 @@ export default function CommunityList() {
         <FlatList
             data={communityDummy}
             renderItem={renderItem}
-            keyExtractor={(item) => item.name + Math.random()}
+            keyExtractor={(item, index) => item.name + index + Math.random()}
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
         />

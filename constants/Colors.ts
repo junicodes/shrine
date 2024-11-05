@@ -5,7 +5,7 @@
 
 const tintColorLight = '#0a7ea4';
 const tintColorRed = '#761022';
-const tintColorDark = '#fff';
+const tintColorDark = '#761022';
 
 export const Colors = {
   light: {

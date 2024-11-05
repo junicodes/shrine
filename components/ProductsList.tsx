@@ -34,7 +34,7 @@ const ProductsList = () => {
             numColumns={2}
             key={'two-columns'}
             columnWrapperStyle={styles.columnWrapper}
-            className='mb-60'
+            style={styles.flatlistPadding}
         />
     )
 }
@@ -49,6 +49,6 @@ const styles = StyleSheet.create({
         gap: 10
     },
     flatlistPadding: {
-        paddingBottom: hp("6")
+        marginBottom: hp("22")
     }
 });

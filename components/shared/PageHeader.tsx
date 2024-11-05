@@ -4,25 +4,27 @@ import { Colors } from "@/constants/Colors";
 import { useColorScheme } from 'nativewind';
 import LogoTitle from './LogoTitle';
 import GoBack from './GoBack';
+import { ThemedText } from '../ThemedText';
 
-const PageHeader = ({ title, headerShown = true, goBackUrl = "/signup" }: { title: string, headerShown?: boolean, goBackUrl: Href<string | object> }) => {
+const PageHeader = ({ title, headerShown= true, goBackUrl }: {title: string, headerShown?: boolean, goBackUrl?: Href<string | object>}) => {
   const { colorScheme } = useColorScheme();
 
   return (
     <Stack.Screen
-      options={{
-        title,
-        headerShown,
-        headerStyle: { backgroundColor: colorScheme === "light" ? Colors.light.background : Colors.dark.background },
-        headerTintColor: colorScheme === "light" ? Colors.dark.background : Colors.light.background,
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
-        headerShadowVisible: false,
-        headerTitleAlign: "center",
-        headerTitle: (props) => <LogoTitle {...props} />,
-        headerLeft: (props) => <GoBack route={goBackUrl} {...props} />,
-      }}
+        options={{
+            title,
+            headerShown,
+            headerBackVisible: false,
+            headerStyle: { backgroundColor: colorScheme === "light" ? Colors.light.background : Colors.dark.background },
+            headerTintColor: colorScheme === "light" ? Colors.dark.background : Colors.light.background,
+            headerTitleStyle: {
+                fontWeight: "bold",
+            },
+            headerShadowVisible: false,
+            headerTitleAlign: "center",
+            headerTitle: (props) => title ? <ThemedText  type='defaultSemiBold'>{title}</ThemedText> : <LogoTitle {...props} />,
+            headerLeft: (props) => goBackUrl ? <GoBack route={goBackUrl} {...props} /> : null,
+        }}
     />
   )
 }

@@ -35,7 +35,7 @@ const globalStyles = () => {
                 backgroundColor: isDark ? 'transparent' : '#FBFBFB'
             },
             gfontRegular: {
-                fontFamily: 'raleway-regular',
+                // fontFamily: 'raleway-regular',
             },
             gfontBold: {
                 fontFamily: 'raleway-bold'
@@ -67,7 +67,7 @@ const globalStyles = () => {
                 borderRadius: 6,
                 // backgroundColor: '#F4F4F4',
                 backgroundColor: '#ffffff',
-                fontFamily: 'raleway-regular',
+                // fontFamily: 'raleway-regular',
                 fontSize: 16,
                 marginBottom: 5,
                 width: '100%',

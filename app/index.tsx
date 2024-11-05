@@ -1,8 +1,10 @@
+import useCachedResources from '@/hooks/useCachedResources';
 import { getObjectAsyncStorage } from '@/utils/asyncStorage';
 import { Redirect } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 
 const IndexLayout = () => {
+    const isLoadingComplete = useCachedResources();
     const [loadView, setLoadView] = useState<string | null>(null);
 
     useEffect(() => {
@@ -16,12 +18,15 @@ const IndexLayout = () => {
 
     }, [loadView]);
 
-    return <>
-        {loadView === "signin" && <Redirect href="/(tabs)" />}
-        {loadView === "onboarding" && <Redirect href="/onboarding" />}
-    </>
 
-
+    if (isLoadingComplete) {
+        return (
+            <>
+                {loadView === "signin" && <Redirect href="/(tabs)/profile" />}
+                {loadView === "onboarding" && <Redirect href="/onboarding" />}
+            </>
+        );
+    }
 }
 
 export default IndexLayout;

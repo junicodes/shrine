@@ -11,6 +11,9 @@ export const offlineImage = {
     password: require('../assets/images/password.png'),
     inActiveOval: require('../assets/images/onboarding/inactive-oval.png'),
     splashScreen: require('../assets/images/onboarding/onboarding-bg.png'),
+    onboarding0: require('../assets/images/onboarding/onboarding-1.jpg'),
+    onboarding1: require('../assets/images/onboarding/onboarding-2.jpg'),
+    onboarding2: require('../assets/images/onboarding/onboarding-3.jpg'),
     headerLogo: require('../assets/images/onboarding/shrine-logo-2.png'),
     goBackLight: require('../assets/images/go-back-white.png'),
     orDivide: require('../assets/images/or-divide.png'),
@@ -38,7 +41,7 @@ export const offlineImage = {
     emptyCardImg: require('../assets/images/empty_card.png'),
     //Dark
     goBackDark: require('../assets/images/go-back-l.png'),
-}
+} as any
 
 export const onlineImage = {
 

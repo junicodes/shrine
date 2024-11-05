@@ -6,10 +6,12 @@ const SVGChatIcon = (props: SvgProps) => (
     <Svg
       // @ts-ignore:
       xmlns="http://www.w3.org/2000/svg"
-      width={24}
-      height={24}
+      width={30}
+      height={30}
       fill={props.fill}
-      style={[{ marginBottom: -3 }]}
+      style={[{ marginBottom: -3, marginLeft: 4, borderRadius: 5 }]}
+      preserveAspectRatio="xMinYMin slice"
+      viewBox="0 0 100 25"
       {...props}
     >
       <Path

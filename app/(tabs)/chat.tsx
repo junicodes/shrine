@@ -134,7 +134,7 @@ export default function ChatScreen() {
                         <BanterList />
                     </View>
                 )}
-                <View className={`px-3 -bottom-8`}>
+                <View className={`px-3 -bottom-2`}>
                     <View className={`w-full h-[1.5px] bg-grey_100 mb-8`}></View>
                     <View className="flex-row gap-3 items-center">
                         <Image
@@ -143,7 +143,7 @@ export default function ChatScreen() {
                         />
                         <View className={``}>
                             <ThemedText
-                                className={`font-medium text-sm leading-5 text-grey_900`}
+                                className={`font-medium text-sm leading-5`}
                             >
                                 Browse All Members
                             </ThemedText>
@@ -157,7 +157,7 @@ export default function ChatScreen() {
                 </View>
                 <BottomSheet isVisible={isModalVisible} onBackdropPress={toggleModal}>
                     <ThemedView
-                        className={`bg-white rounded-tl-[32px] rounded-tr-[32px] h-[428px]`}
+                        className={`rounded-tl-[32px] rounded-tr-[32px] h-[428px] border`}
                     >
                         <View className="flex-row justify-between items-center pb-7 border-b border-b-grey_200">
                             <ThemedText className="font-bold text-base leading-6 text-grey_900">
@@ -184,7 +184,7 @@ export default function ChatScreen() {
                                             }`}
                                     >
                                         <ThemedText
-                                            className={`font-medium text-sm leading-5 text-grey_900 ${checked === 'conversations' && "text-primary_900"
+                                            className={`font-medium text-sm leading-5 ${checked === 'conversations' && "text-primary_900"
                                                 }`}
                                         >
                                             All Conversations
@@ -204,7 +204,7 @@ export default function ChatScreen() {
                                             }`}
                                     >
                                         <ThemedText
-                                            className={`font-medium text-sm leading-5 text-grey_900 ${checked === "read" && "text-primary_900"
+                                            className={`font-medium text-sm leading-5 ${checked === "read" && "text-primary_900"
                                                 }`}
                                         >
                                             Already Read
@@ -224,7 +224,7 @@ export default function ChatScreen() {
                                             : 'border-grey_200'}`}
                                     >
                                         <ThemedText
-                                            className={`font-medium text-sm leading-5 text-grey_900 ${checked === "unread" && "text-primary_900"
+                                            className={`font-medium text-sm leading-5 ${checked === "unread" && "text-primary_900"
                                                 }`}
                                         >
                                             Unread

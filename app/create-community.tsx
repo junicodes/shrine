@@ -1,5 +1,7 @@
 import ImageProfile from '@/components/ImageProfile'
 import { TabBarIcon } from '@/components/navigation/TabBarIcon'
+import GoBack from '@/components/shared/GoBack'
+import PageHeader from '@/components/shared/PageHeader'
 import { ThemedText } from '@/components/ThemedText'
 import { ThemedView } from '@/components/ThemedView'
 import { offlineImage } from '@/constants/images'
@@ -27,18 +29,15 @@ const createCommunity = () => {
     const handleFormSubmit = () => { };
 
     return (
-        <ThemedView className='px-3' style={styles.lightBg}>
-            <View className='mt-4 flex-row'>
-                <TabBarIcon name='arrow-back' color={'#111827'} />
-                <Text className='font-bold text-xl leading-8 text-grey_900 mx-auto'>Create Community</Text>
-            </View>
+        <ThemedView className='px-3 flex-1'>
+            <PageHeader title={'Create Community'} goBackUrl={'/(tabs)/community'} />
             <Formik
                 enableReinitialize
                 initialValues={{ ...payload } as any}
                 onSubmit={handleFormSubmit}
             >
                 {(props: any) => (
-                    <View className=''>
+                    <View>
                         <ImageProfile />
                         <View className='mt-32'>
                             <ThemedText className='mt-1 mb-2 text-sm font-semibold'>Community Name</ThemedText>
@@ -96,15 +95,24 @@ const createCommunity = () => {
                                 </Text>
                             </View>
                         </View>
-
                     </View>
                 )}
             </Formik>
             <View className='absolute bottom-5 left-0 flex flex-row justify-center right-0 '>
                 <Button
-                    buttonColor='#761022'
-                    textColor='#ffffff'
-                    className='w-11/12 py-3 border-2 border-white'>
+                    icon=""
+                    mode="contained"
+                    textColor="white"
+                    labelStyle={{ fontSize: 16 }}
+                    buttonColor="#7f1d1d"
+                    rippleColor="#7F1D1D7A"
+                    className={`rounded-xl h-14 justify-center w-11/12`}
+                    onPress={async () => {
+                        // await saveObjectAsyncStorage('isOnboarding', {status: true});
+                        // return router.replace("/registration")
+                        // router.push('/(tabs)')
+                    }}
+                >
                     Create Community
                 </Button>
             </View>
@@ -116,7 +124,6 @@ export default createCommunity;
 
 const styles = StyleSheet.create({
     lightBg: {
-        backgroundColor: '#ffffff',
         flex: 1,
     },
     textArea: {

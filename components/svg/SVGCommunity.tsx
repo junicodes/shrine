@@ -9,15 +9,13 @@ const SVGCommunity = (props: any) => {
     const colorScheme = useColorScheme();
     
     return (
-        <View style={{backgroundColor: Colors[colorScheme ?? 'light'].svg}} 
-            className={`p-3 rounded-full mb-4 border-t border-r ${props.focused ? 'border-[#761022]' : "border-gray-200"}`}>
-            <Svg
+        <Svg
             // @ts-ignore:
             xmlns="http://www.w3.org/2000/svg"
             width={30}
             height={30}
             fill={props.fill}
-            style={[{ marginBottom: -3, borderRadius: 5 }]}
+            style={[{ marginBottom: -3, marginLeft: 0, borderRadius: 5 }]}
             preserveAspectRatio="xMinYMin slice"
             viewBox="0 0 100 25"
             {...props}
@@ -29,7 +27,6 @@ const SVGCommunity = (props: any) => {
                 clipRule="evenodd"
             />
         </Svg>
-        </View>
     )
 }
 const Memo = memo(SVGCommunity)
