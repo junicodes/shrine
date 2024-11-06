@@ -8,7 +8,7 @@ import { FormPayload_SignIn } from '@/types/auth'
 import { Formik } from 'formik'
 import React, { useState } from 'react'
 import { Button } from 'react-native-paper';
-import { TextInput, View, useColorScheme, Image, Text, Pressable } from 'react-native'
+import { TextInput, View, useColorScheme, Image, } from 'react-native';
 import { router } from 'expo-router';
 import PageHeader from '@/components/shared/PageHeader'
 
@@ -20,7 +20,7 @@ const Account = () => {
         email: '',
         password: '',
         phoneNumber: '',
-    })
+    });
 
     const color = useColorScheme();
 

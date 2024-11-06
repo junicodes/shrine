@@ -1,12 +1,10 @@
 import { Image, StyleSheet, Platform, View, FlatList, Dimensions } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { offlineImage } from '@/constants/images';
 import { Button } from 'react-native-paper';
-import { communityDummy } from '@/utils/dummyData';
 import CommunityList from '@/components/CommunityList';
 import { router } from 'expo-router';
 import { useColorScheme } from 'nativewind';
@@ -14,8 +12,8 @@ import { useColorScheme } from 'nativewind';
 export default function HomeScreen() {
 
   const { colorScheme, setColorScheme } = useColorScheme();
-  const screenHeight = Dimensions.get('window').height - 300 
-  
+  const screenHeight = Dimensions.get('window').height - 300
+
   return (
     <ThemedView>
       <View className='mt-2 flex flex-row items-center py-5' style={styles.profileView}>
@@ -49,10 +47,10 @@ export default function HomeScreen() {
           }}
         >Create New</Button>
       </View>
-      <View style={{height: screenHeight }}>
+      <View style={{ height: screenHeight }}>
         <CommunityList />
       </View>
-    </ThemedView>   
+    </ThemedView>
   );
 }
 
