@@ -3,12 +3,16 @@ import { StyleSheet, View, Text } from 'react-native';
 import React from 'react'
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import ThePeopleList from '@/components/thePeopleList';
+import { useRouter } from 'expo-router';
+
 
 const thePeople = () => {
+    const router = useRouter();
+
     return (
         <ThemedView style={styles.mainBg} className='px-2'>
             <View className={`mt-4 flex-row justify-between items-center`}>
-                <TabBarIcon name='arrow-back' color={'#111827'} />
+                <TabBarIcon name='arrow-back' color={'#111827'} onPress={() => router.back()} />
                 <Text className='font-bold text-xl leading-8 text-grey_900'>The People</Text>
                 <TabBarIcon name='ellipsis-vertical' color='#111827' />
             </View>
