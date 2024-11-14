@@ -1,7 +1,8 @@
 import React from 'react';
-import { FlatList, Image, View, StyleSheet } from 'react-native';
+import { FlatList, Image, View, StyleSheet, Pressable } from 'react-native';
 import { ThemedText } from './ThemedText';
 import { products } from './shared/dummyData';
+import { router, Router } from 'expo-router';
 import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
@@ -15,12 +16,14 @@ interface Product {
 
 const ProductsList = () => {
     const renderItem = ({ item }: { item: { img: any, title: string, price: string } }) => (
-        <View className='w-[45%] p-2'>
-            <View className={`gap-[13.3px]`}>
-                <Image source={item.img} className={`w-full rounded-[8.87px] h-[164.04px]`} />
-                <ThemedText className='font-normal text-sm leading-5 text-grey_900'>{item.title}</ThemedText>
-                <ThemedText className={`font-normal text-xs leading-4 text-grey_500`}>{item.price}</ThemedText>
-            </View>
+        <View className='w-[45%] p-2' >
+            <Pressable onPress={() => router.push(`/details`)}>
+                <View className={`gap-[13.3px]`}>
+                    <Image source={item.img} className={`w-full rounded-[8.87px] h-[164.04px]`} />
+                    <ThemedText className='font-normal text-sm leading-5 text-grey_900'>{item.title}</ThemedText>
+                    <ThemedText className={`font-normal text-xs leading-4 text-grey_500`}>{item.price}</ThemedText>
+                </View>
+            </Pressable>
         </View>
     )
 
