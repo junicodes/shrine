@@ -49,9 +49,9 @@ export default function ChatScreen() {
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <ThemedView className="px-2 flex-1">
-                <View className="flex-row justify-between items-center mt-7">
+                <View className="flex-row justify-between items-center mt-10">
                     <ThemedText
-                        className={`mx-auto font-bold text-xl leading-7 text-natural_grey_900`}
+                        className={`mx-auto font-bold text-base leading-7`}
                     >
                         Chats
                     </ThemedText>
@@ -157,10 +157,10 @@ export default function ChatScreen() {
                 </View>
                 <BottomSheet isVisible={isModalVisible} onBackdropPress={toggleModal}>
                     <ThemedView
-                        className={`rounded-tl-[32px] rounded-tr-[32px] h-[428px] border`}
+                        className={`rounded-tl-[32px] rounded-tr-[32px] h-[428px]`}
                     >
                         <View className="flex-row justify-between items-center pb-7 border-b border-b-grey_200">
-                            <ThemedText className="font-bold text-base leading-6 text-grey_900">
+                            <ThemedText className="font-bold text-base leading-6">
                                 Sort
                             </ThemedText>
                             <Pressable onPress={toggleModal}>
