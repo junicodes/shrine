@@ -42,19 +42,17 @@ const Profile = () => {
       </View>
       {
         menuList.map(x => (
-          <>
-            <Pressable onPress={() => router.push(x.uri)}>
-              <View key={Math.random() + "menu-list"} className={`mt-8 px-2 flex-row justify-between items-center`}>
-                  <View className={`flex-row gap-3 items-center`}>
-                    <View className={`w-[40px] h-[40px] rounded-full bg-primary_50 justify-center items-center`}>
-                      <Image source={offlineImage.user_red} className={`w-[20px] h-[20px]`} />
-                    </View>
-                    <ThemedText className={`font-medium text-base leading-6`}>{x.title}</ThemedText>
+          <Pressable key={Math.random() + x.title + "menu-list"} onPress={() => router.push(x.uri)}>
+            <View className={`mt-8 px-2 flex-row justify-between items-center`}>
+                <View className={`flex-row gap-3 items-center`}>
+                  <View className={`w-[40px] h-[40px] rounded-full bg-primary_50 justify-center items-center`}>
+                    <Image source={offlineImage.user_red} className={`w-[20px] h-[20px]`} />
                   </View>
-                <TabBarIcon name='chevron-forward' color={color === 'dark' ? '#ffffff' : '#9CA3AF'} />
-              </View>
-            </Pressable>
-          </>
+                  <ThemedText className={`font-medium text-base leading-6`}>{x.title}</ThemedText>
+                </View>
+              <TabBarIcon name='chevron-forward' color={color === 'dark' ? '#ffffff' : '#9CA3AF'} />
+            </View>
+          </Pressable>
         ))
       }
       <View className={`mt-auto mb-28`}>

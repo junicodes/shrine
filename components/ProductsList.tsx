@@ -16,10 +16,10 @@ interface Product {
 
 const ProductsList = () => {
     const renderItem = ({ item }: { item: { img: any, title: string, price: string } }) => (
-        <View className='w-[45%] p-2' >
+        <View className='w-[47.5%]' >
             <Pressable onPress={() => router.push(`/details`)}>
-                <View className={`gap-[13.3px]`}>
-                    <Image source={item.img} className={`w-full rounded-[8.87px] h-[164.04px]`} />
+                <View className={``}>
+                    <Image source={item.img} className={`w-full rounded-[8.87px] h-[180px]`} />
                     <ThemedText className='font-normal text-sm leading-5 text-grey_900'>{item.title}</ThemedText>
                     <ThemedText className={`font-normal text-xs leading-4 text-grey_500`}>{item.price}</ThemedText>
                 </View>

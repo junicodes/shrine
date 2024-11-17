@@ -1,9 +1,7 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import SVGChatIcon from '@/components/svg/SVGChatIcon';
 import SvgHomeIcon from '@/components/svg/SVGHomeIcon';
 import SVGProfile from '@/components/svg/SVGProfile';
@@ -21,6 +19,8 @@ export default function TabLayout() {
         headerShown: false,
         tabBarStyle: {
           backgroundColor: Colors[colorScheme ?? 'light'].background,
+          borderColor: "white",
+          height: 86
         },
       }}>
       <Tabs.Screen
@@ -46,7 +46,7 @@ export default function TabLayout() {
         options={{
           title: 'Community',
           tabBarIcon: ({ color, focused }) => (
-            <SVGCommunity fill={focused ? color : iconDefaultColor} focused={focused} />
+            <SVGCommunity fill={focused ? color : iconDefaultColor} />
           ),
         }}
       />

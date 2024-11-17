@@ -1,5 +1,5 @@
 
-import { StyleSheet, Appearance, useColorScheme } from 'react-native';
+import { StyleSheet, Appearance, useColorScheme, Platform } from 'react-native';
 import { height, setHeight, setWidth } from '../../constants/configs';
 
 type StylesProps = string | null | undefined;
@@ -184,7 +184,29 @@ const globalStyles = () => {
             gHotmail: { 
                 backgroundColor: '#1D70B6',
                 borderColor: '#1D70B6'
-            }
+            },
+            elevationButtonLow: {
+                ...Platform.select({
+                    ios: {
+                        shadowColor: '#761022',
+                        shadowOffset: { width: 0, height: 2 },
+                        shadowOpacity: 0.5,
+                        shadowRadius: 5,    
+                    },
+                    android: {
+                        elevation: 5,
+                    },
+                }),
+            },
+            lightBg: {
+                backgroundColor: '#ffffff',
+                flex: 1,
+            },
+            headerView: {
+                marginTop: 30,
+                display: 'flex',
+                justifyContent: 'space-between',
+            },
         })
 }
 

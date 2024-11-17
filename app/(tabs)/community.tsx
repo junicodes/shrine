@@ -8,15 +8,16 @@ import { Button } from 'react-native-paper';
 import CommunityList from '@/components/CommunityList';
 import { router } from 'expo-router';
 import { useColorScheme } from 'nativewind';
+import globalStyles from '@/assets/styles/global';
 
 export default function HomeScreen() {
-
+  const { headerView } = globalStyles();
   const { colorScheme, setColorScheme } = useColorScheme();
   const screenHeight = Dimensions.get('window').height - 300
 
   return (
     <ThemedView>
-      <View className='mt-2 flex flex-row items-center py-5' style={styles.profileView}>
+      <View className='mt-2 flex flex-row items-center py-5' style={headerView}>
         <View className=''>
           <ThemedText type='subtitle' className=' font-normal text-base leading-6'>Good morning,</ThemedText>
           <View className='flex gap-2 flex-row mt-1'>
@@ -53,14 +54,3 @@ export default function HomeScreen() {
     </ThemedView>
   );
 }
-
-const styles = StyleSheet.create({
-  lightBg: {
-    backgroundColor: '#ffffff',
-    flex: 1,
-  },
-  profileView: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-});

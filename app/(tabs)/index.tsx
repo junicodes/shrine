@@ -7,66 +7,62 @@ import { View, Image } from "react-native";
 import { Button } from "react-native-paper";
 import CategoryList from "@/components/CategoryList";
 import ProductsList from "@/components/ProductsList";
+import globalStyles from "@/assets/styles/global";
+import SVGNotification from '@/components/svg/SVGNotification';
+import SVGSearch from '@/components/svg/SVGSearch';
+import SVGPlus from '@/components/svg/SVGPlus';
 
 const Home = () => {
+  const { headerView } = globalStyles();
   const [view, setView] = useState<string>('market');
 
   return (
-    <ThemedView className="px-2 flex-1">
-      <View className="mt-2 flex flex-row items-center px-2 justify-between">
-        <View className="">
-          <ThemedText
-            type="subtitle"
-            className=" font-normal text-base leading-6"
-          >
-            Good morning,
-          </ThemedText>
-          <View className="flex gap-2 flex-row mt-1">
-            <Image
-              source={offlineImage.user_avatar}
-              className="w-[27px] h-[27px]"
-            />
-            <ThemedText className="font-bold text-lg leading-6">
-              Okey Boy
-            </ThemedText>
+    <ThemedView>
+      <View className='flex flex-row items-center py-5' style={headerView}>
+        <View className=''>
+          <ThemedText type='subtitle' className=' font-normal text-base leading-6'>Good morning,</ThemedText>
+          <View className='flex gap-2 flex-row mt-1 items-center'>
+            <Image source={offlineImage.user_avatar} className='w-[27px] h-[27px]' />
+            <ThemedText className='font-bold text-lg leading-6'>Okey Boy</ThemedText>
           </View>
         </View>
-        <View className="flex-row gap-4 justify-center">
-          <AntDesign name="search1" size={24} color="#9CA3AF" />
-          <FontAwesome5 name="bell" size={24} color="#9CA3AF" />
+        <View className='flex-row gap-4 justify-center'>
+          <SVGSearch />
+          <SVGNotification />
         </View>
       </View>
       <View className="mt-6 mb-5">
-        <View className="flex-row justify-start !space-x-1">
+        <View className="flex-row justify-start !space-x-3">
           <Button
             textColor="#761022"
-            className="bg-gret_50 px-[10px] py-2 rounded-lg text-xs leading-4"
+            className="bg-gret_50 h-10 rounded-lg text-xs leading-4"
             onPress={() => setView('market')}
           >
             Market PLace
           </Button>
           <Button
             textColor="#9CA3AF"
-            className="bg-gret_50 px-[10px] py-2 rounded-lg"
+            className="bg-gret_50 h-10 rounded-lg"
             onPress={() => setView('events')}
           >
             Events
           </Button>
           <Button
             textColor="#9CA3AF"
-            className="bg-gret_50 px-[10px] py-2 rounded-lg"
-            icon={"plus"}
+            className="bg-gret_50 h-10 rounded-lg"
           >
-            Create New
+            Create New&nbsp;
+            <SVGPlus />
           </Button>
         </View>
       </View>
+
       {view === 'market' && (
         <>
-          <View className={`mt-4 px-2`}>
+          <View className={`my-2 px-2`}>
             <CategoryList />
           </View>
-          <View className={`mt-4 px-2`}>
+          <View className={`my-4 px-2 pb-12`}>
             <ProductsList />
           </View>
         </>
