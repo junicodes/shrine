@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList, Image, View, StyleSheet, Pressable } from 'react-native';
 import { ThemedText } from './ThemedText';
 import { products } from './shared/dummyData';
-import { router, Router } from 'expo-router';
+import { router } from 'expo-router';
 import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
