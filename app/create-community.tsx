@@ -6,6 +6,7 @@ import { ThemedText } from '@/components/ThemedText'
 import { ThemedView } from '@/components/ThemedView'
 import { offlineImage } from '@/constants/images'
 import { Formik } from 'formik'
+import { useColorScheme } from 'nativewind'
 import React, { useState } from 'react'
 import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity } from 'react-native'
 import { Button } from 'react-native-paper'
@@ -18,6 +19,7 @@ interface FormPayloadCreateCommunity {
 }
 
 const createCommunity = () => {
+    const { colorScheme, setColorScheme } = useColorScheme();
     const [checked, setChecked] = useState(false);
     const [payload, setPayload] = useState<FormPayloadCreateCommunity>({
         image: '',
@@ -29,7 +31,7 @@ const createCommunity = () => {
     const handleFormSubmit = () => { };
 
     return (
-        <ThemedView className='px-3 flex-1'>
+        <ThemedView>
             <PageHeader title={'Create Community'} goBackUrl={'/(tabs)/community'} />
             <Formik
                 enableReinitialize
@@ -43,11 +45,11 @@ const createCommunity = () => {
                             <ThemedText className='mt-1 mb-2 text-sm font-semibold'>Community Name</ThemedText>
                             <View>
                                 <Image
-                                    className={`w-5 h-5 absolute z-20 top-[18px] left-3`}
+                                    className={`w-5 h-5 absolute z-20 top-[12px] left-3`}
                                     source={offlineImage.email}
                                 />
                                 <TextInput
-                                    className='pl-11 py-3 border border-[#E5E7EB] rounded-xl'
+                                    className='pl-10 py-3 border border-[#E5E7EB] rounded-xl'
                                     placeholder="Community name"
                                     placeholderTextColor="#ABAFB3"
                                     keyboardType="email-address"
@@ -98,23 +100,19 @@ const createCommunity = () => {
                     </View>
                 )}
             </Formik>
-            <View className='absolute bottom-5 left-0 flex flex-row justify-center right-0 '>
-                <Button
-                    icon=""
-                    mode="contained"
-                    textColor="white"
-                    labelStyle={{ fontSize: 16 }}
-                    buttonColor="#7f1d1d"
-                    rippleColor="#7F1D1D7A"
-                    className={`rounded-xl h-14 justify-center w-11/12`}
+            <View className='absolute bottom-8 left-0 flex flex-row justify-center right-0 '>
+                <TouchableOpacity
+                    className={`flex bg-[#7f1d1d] flex-row min-w-[113px] rounded-xl h-14 w-11/12 px-8 items-center justify-center`}
                     onPress={async () => {
                         // await saveObjectAsyncStorage('isOnboarding', {status: true});
                         // return router.replace("/registration")
                         // router.push('/(tabs)')
                     }}
                 >
-                    Create Community
-                </Button>
+                    <Text className="text-[#fff] text-base font-semibold">
+                        Create Community
+                    </Text>
+                </TouchableOpacity>
             </View>
         </ThemedView>
     )

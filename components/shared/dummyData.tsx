@@ -1,6 +1,6 @@
 import { offlineImage } from "@/constants/images";
 
-export const foodTypes = [
+export const productCategory = [
     {
         image: offlineImage.salad,
         name: "Food",

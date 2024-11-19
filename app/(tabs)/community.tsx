@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, View, FlatList, Dimensions } from 'react-native';
+import { Image, StyleSheet, Platform, View, FlatList, Dimensions, TouchableOpacity, Text } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { ThemedText } from '@/components/ThemedText';
@@ -9,6 +9,7 @@ import CommunityList from '@/components/CommunityList';
 import { router } from 'expo-router';
 import { useColorScheme } from 'nativewind';
 import globalStyles from '@/assets/styles/global';
+import SVGPlus from '@/components/svg/SVGPlus';
 
 export default function HomeScreen() {
   const { headerView } = globalStyles();
@@ -30,24 +31,25 @@ export default function HomeScreen() {
           <FontAwesome5 name="bell" size={24} color="#9CA3AF" />
         </View>
       </View>
-      <View className='flex-row justify-left mt-4 gap-2 pb-4'>
-        <Button
-          mode="contained"
-          textColor={colorScheme === "light" ? "#761022" : "#9CA3AF"}
-          buttonColor={colorScheme === "light" ? "#F9FAFB" : "bg-none"}
-          className={`rounded-lg py-2 px-[8px] font-medium text-xs leading-4 min-w-[113px] border ${colorScheme === "light" ? "border-none" : "border-gray-500"}`}
-        >Your Communities</Button>
-        <Button
-          icon='plus'
-          mode="contained"
-          textColor="#9CA3AF"
-          buttonColor={colorScheme === "light" ? "#F9FAFB" : "bg-none"}
-          className={`rounded-lg py-2 px-[8px] font-medium text-xs leading-4 min-w-[111px] border ${colorScheme === "light" ? "border-none" : "border-gray-500"}`}
-          onPress={async () => {
-            router.push('/create-community')
-          }}
-        >Create New</Button>
-      </View>
+      <View className='flex-row justify-left mt-4 gap-2 pb-4 h-20'>
+         <TouchableOpacity
+            className={`flex flex-row min-w-[113px] rounded-lg px-8 items-center justify-center ${colorScheme === "light" ? "border-none bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
+            onPress={() => {
+              
+            }}
+        >
+          <Text className="text-[#9CA3AF]">Your Communities</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+            className={`flex flex-row rounded-lg min-w-[113px] px-8 items-center justify-center ${colorScheme === "light" ? "border-none bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
+            onPress={() => {
+              router.push('/create-community')
+            }}
+        >
+          <Text className="text-[#9CA3AF]">Create New</Text>
+          <SVGPlus />
+        </TouchableOpacity>
+    </View>
       <View style={{ height: screenHeight }}>
         <CommunityList />
       </View>

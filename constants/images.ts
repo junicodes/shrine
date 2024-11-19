@@ -39,6 +39,7 @@ export const offlineImage = {
     laptop: require('../assets/images/laptop.png'),
     salad: require('../assets/images/salad.png'),
     emptyCardImg: require('../assets/images/empty_card.png'),
+    plusIcon: require('../assets/images/plus-icon.png'),
     //Dark
     goBackDark: require('../assets/images/go-back-l.png'),
 } as any

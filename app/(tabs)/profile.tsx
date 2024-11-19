@@ -31,7 +31,7 @@ const Profile = () => {
   ];
 
   return (
-    <ThemedView className='px-2 flex-1'>
+    <ThemedView>
       <PageHeader title={'Profile'} />
       <View className={`border-b border-b-grey_100 border-t border-t-grey_100 flex-row items-center gap-3 mt-8 py-3`}>
         <Image source={offlineImage.avatar_three} className={`w-[52px] h-[52px]`} />

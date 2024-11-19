@@ -19,8 +19,8 @@ export default function TabLayout() {
         headerShown: false,
         tabBarStyle: {
           backgroundColor: Colors[colorScheme ?? 'light'].background,
-          borderColor: "white",
-          height: 86
+          borderColor: Colors[colorScheme ?? 'light'].tabBorder,
+ 
         },
       }}>
       <Tabs.Screen

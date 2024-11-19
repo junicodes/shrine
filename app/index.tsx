@@ -22,7 +22,7 @@ const IndexLayout = () => {
     if (isLoadingComplete) {
         return (
             <>
-                {loadView === "signin" && <Redirect href="/(tabs)/profile" />}
+                {loadView === "signin" && <Redirect href="/(tabs)" />}
                 {loadView === "onboarding" && <Redirect href="/onboarding" />}
             </>
         );

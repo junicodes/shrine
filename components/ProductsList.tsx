@@ -7,6 +7,7 @@ import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
+import { offlineImage } from '@/constants/images';
 
 interface Product {
     img: any;
@@ -16,12 +17,12 @@ interface Product {
 
 const ProductsList = () => {
     const renderItem = ({ item }: { item: { img: any, title: string, price: string } }) => (
-        <View className='w-[47.5%]' >
+        <View className='w-[50%]' >
             <Pressable onPress={() => router.push(`/details`)}>
                 <View className={``}>
-                    <Image source={item.img} className={`w-full rounded-[8.87px] h-[180px]`} />
-                    <ThemedText className='font-normal text-sm leading-5 text-grey_900'>{item.title}</ThemedText>
-                    <ThemedText className={`font-normal text-xs leading-4 text-grey_500`}>{item.price}</ThemedText>
+                    <Image source={offlineImage.onboarding1} className={`w-full rounded-[8.87px] h-[250px]`} />
+                    <ThemedText className='font-normal text-sm leading-5'>{item.title}</ThemedText>
+                    <ThemedText className={`font-normal text-xs leading-4`}>{item.price}</ThemedText>
                 </View>
             </Pressable>
         </View>

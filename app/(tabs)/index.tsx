@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { offlineImage } from "@/constants/images";
 import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
-import { View, Image } from "react-native";
+import { View, Image, Text, Pressable, TouchableOpacity, ViewStyle, useAnimatedValue, Animated } from "react-native";
 import { Button } from "react-native-paper";
 import CategoryList from "@/components/CategoryList";
 import ProductsList from "@/components/ProductsList";
@@ -11,9 +11,12 @@ import globalStyles from "@/assets/styles/global";
 import SVGNotification from '@/components/svg/SVGNotification';
 import SVGSearch from '@/components/svg/SVGSearch';
 import SVGPlus from '@/components/svg/SVGPlus';
+import { useColorScheme } from 'nativewind';
+import { router } from "expo-router";
 
 const Home = () => {
   const { headerView } = globalStyles();
+  const { colorScheme, setColorScheme } = useColorScheme();
   const [view, setView] = useState<string>('market');
 
   return (
@@ -33,36 +36,40 @@ const Home = () => {
       </View>
       <View className="mt-6 mb-5">
         <View className="flex-row justify-start !space-x-3">
-          <Button
-            textColor="#761022"
-            className="bg-gret_50 h-10 rounded-lg text-xs leading-4"
-            onPress={() => setView('market')}
+          <TouchableOpacity
+              className={`h-10 flex flex-row rounded-lg px-4 items-center justify-center ${colorScheme === "light" ? "bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
+              onPress={() => {
+                setView('market')
+              }}
           >
-            Market PLace
-          </Button>
-          <Button
-            textColor="#9CA3AF"
-            className="bg-gret_50 h-10 rounded-lg"
-            onPress={() => setView('events')}
+            <Text className="text-[#9CA3AF]">Market PLace</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              className={`h-10 flex flex-row rounded-lg px-4 items-center justify-center ${colorScheme === "light" ? "bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
+              onPress={() => {
+                setView('events')
+              }}
           >
-            Events
-          </Button>
-          <Button
-            textColor="#9CA3AF"
-            className="bg-gret_50 h-10 rounded-lg"
+            <Text className="text-[#9CA3AF]">Event</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              className={`h-10 flex flex-row rounded-lg px-4 items-center justify-center ${colorScheme === "light" ? "bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
+              onPress={() => {
+                router.push('/create-community')
+              }}
           >
-            Create New&nbsp;
+            <Text className="text-[#9CA3AF]">Create New</Text>
             <SVGPlus />
-          </Button>
+          </TouchableOpacity>
         </View>
       </View>
 
       {view === 'market' && (
         <>
-          <View className={`my-2 px-2`}>
+          <View className={`my-1`}>
             <CategoryList />
           </View>
-          <View className={`my-4 px-2 pb-12`}>
+          <View className={`my-4 pb-12`}>
             <ProductsList />
           </View>
         </>
