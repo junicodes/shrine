@@ -20,7 +20,7 @@ export default function TabLayout() {
         tabBarStyle: {
           backgroundColor: Colors[colorScheme ?? 'light'].background,
           borderColor: Colors[colorScheme ?? 'light'].tabBorder,
- 
+
         },
       }}>
       <Tabs.Screen
