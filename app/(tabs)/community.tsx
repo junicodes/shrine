@@ -14,7 +14,7 @@ import SVGPlus from '@/components/svg/SVGPlus';
 export default function HomeScreen() {
   const { headerView } = globalStyles();
   const { colorScheme, setColorScheme } = useColorScheme();
-  const screenHeight = Dimensions.get('window').height - 300
+  const screenHeight = Dimensions.get('window').height - 350
 
   return (
     <ThemedView>

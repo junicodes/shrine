@@ -191,10 +191,10 @@ const globalStyles = () => {
                         shadowColor: '#761022',
                         shadowOffset: { width: 0, height: 2 },
                         shadowOpacity: 0.5,
-                        shadowRadius: 5,    
+                        shadowRadius: 2,    
                     },
                     android: {
-                        elevation: 5,
+                        elevation: 2,
                     },
                 }),
             },

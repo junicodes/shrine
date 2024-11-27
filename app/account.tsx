@@ -8,7 +8,7 @@ import { FormPayload_SignIn } from '@/types/auth'
 import { Formik } from 'formik'
 import React, { useState } from 'react'
 import { Button } from 'react-native-paper';
-import { TextInput, View, useColorScheme, Image, } from 'react-native';
+import { TextInput, View, useColorScheme, Image, TouchableOpacity, Text } from 'react-native';
 import { router } from 'expo-router';
 import PageHeader from '@/components/shared/PageHeader'
 
@@ -125,22 +125,18 @@ const Account = () => {
                                 </View>
                             </View>
                             <View className={`w-full mx-auto pt-6`}>
-                                <Button
-                                    icon=""
-                                    mode="contained"
-                                    textColor="white"
-                                    labelStyle={{ fontSize: 16 }}
-                                    buttonColor="#7f1d1d"
-                                    rippleColor="#7F1D1D7A"
-                                    className={`rounded-xl h-14 justify-center`}
+                                <TouchableOpacity
+                                    className={`flex bg-[#7f1d1d] flex-row rounded-xl h-14 px-8 items-center justify-center`}
                                     onPress={async () => {
                                         // await saveObjectAsyncStorage('isOnboarding', {status: true});
                                         // return router.replace("/registration")
                                         router.push('/(tabs)')
                                     }}
                                 >
-                                    Save Changes
-                                </Button>
+                                    <Text className="text-[#fff] text-base font-semibold">
+                                        Save Changes
+                                    </Text>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     )

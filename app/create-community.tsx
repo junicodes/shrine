@@ -100,9 +100,9 @@ const createCommunity = () => {
                     </View>
                 )}
             </Formik>
-            <View className='absolute bottom-8 left-0 flex flex-row justify-center right-0 '>
+            <View className='absolute bottom-8 left-0 flex flex-row justify-center right-0'>
                 <TouchableOpacity
-                    className={`flex bg-[#7f1d1d] flex-row min-w-[113px] rounded-xl h-14 w-11/12 px-8 items-center justify-center`}
+                    className={`flex bg-[#7f1d1d] flex-row rounded-xl h-14 w-11/12 px-8 items-center justify-center`}
                     onPress={async () => {
                         // await saveObjectAsyncStorage('isOnboarding', {status: true});
                         // return router.replace("/registration")
