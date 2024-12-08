@@ -14,12 +14,16 @@ import Swiper from "react-native-swiper";
 import { ThemedText } from "@/components/ThemedText";
 import { colors, sizes } from "@/components/shared/dummyData";
 import { Button } from "react-native-paper";
-import { router, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
+import { offlineImage } from "@/constants/images";
+import ProductsList from "@/components/ProductsList";
+import ProfileDetail from "@/components/shared/ProfileDetail";
 
 const DetailsPage = () => {
   const [count, setCount] = useState(0);
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
+  const router = useRouter();
 
   const increment = () => {
     setCount(count + 1);
@@ -125,9 +129,8 @@ const DetailsPage = () => {
                 <TouchableOpacity
                   onPress={() => setSelectedColor(item)}
                   style={{ backgroundColor: item }}
-                  className={`!w-[30px] mx-2 !h-[30px] rounded-[56px] ${
-                    selectedColor === item && `border border-black`
-                  }`}
+                  className={`!w-[30px] mx-2 !h-[30px] rounded-[56px] ${selectedColor === item && `border border-black`
+                    }`}
                 />
               )}
             />
@@ -147,9 +150,8 @@ const DetailsPage = () => {
               renderItem={({ item }) => (
                 <TouchableOpacity
                   onPress={() => setSelectedSize(item)}
-                  className={`w-[30px] mx-2 h-[30px] flex justify-center items-center rounded-[56px] bg-white border border-grey_200 ${
-                    selectedSize === item && `border border-black`
-                  }`}
+                  className={`w-[30px] mx-2 h-[30px] flex justify-center items-center rounded-[56px] bg-white border border-grey_200 ${selectedSize === item && `border border-black`
+                    }`}
                 >
                   <ThemedText className="font-normal text-sm leading-5 text-grey_900">
                     {item}
@@ -159,15 +161,37 @@ const DetailsPage = () => {
             />
           </View>
         </View>
-        <View className={`px-4 mt-8`}>
+        <View className={`mt-8 px-2`}>
+          <ThemedText className={`font-normal text-sm leading-4 text-grey_900 mb-7`}>Seller</ThemedText>
+          <ProfileDetail />
+        </View>
+        <View className={`mt-8 px-2`}>
+          <ThemedText className={`font-normal text-sm leading-4 text-grey_900 mb-7`}>More from seller</ThemedText>
+          <View className={``}>
+            <ProductsList />
+          </View>
+        </View>
+        <View className={`flex-row justify-center gap-2`}>
           <Button
+            className={`rounded-xl h-14 justify-center mt-6`}
             mode="contained"
             textColor="white"
-            buttonColor="#761022"
-            className={`rounded-xl py-4`}
-                      onPress={() => router.push({pathname: '/checkout'})}
+            labelStyle={{ fontSize: 16, width: 130 }}
+            buttonColor="#7f1d1d"
+            rippleColor="#7F1D1D7A"
+            onPress={() => router.push(`/checkout`)}
           >
             Buy Now
+          </Button>
+          <Button
+            className={`rounded-xl h-14 justify-center mt-6`}
+            mode="contained"
+            textColor="#7f1d1d"
+            labelStyle={{ fontSize: 16, width: 130 }}
+            buttonColor="#F1E7E9"
+            rippleColor="#7F1D1D7A"
+          >
+            Make Offer
           </Button>
         </View>
       </ScrollView>

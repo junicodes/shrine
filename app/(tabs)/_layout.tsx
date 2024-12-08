@@ -62,7 +62,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="profile"
         options={{
-          title: 'Profile',
+          // title: 'Profile',
           tabBarIcon: ({ color, focused }) => (
             <SVGProfile fill={focused ? color : iconDefaultColor} />
           ),
