@@ -17,6 +17,8 @@ module.exports = {
         primary_900: '#761022',
         primary_50: '#F1E7E9',
         others_red: '#E22E31',
+        other_8b: '#64748B',
+        other_95: '#95939A',
       }
     },
   },

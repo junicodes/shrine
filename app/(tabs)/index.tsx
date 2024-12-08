@@ -37,29 +37,28 @@ const Home = () => {
       <View className="mt-6 mb-5 px-4">
         <View className="flex-row justify-start !space-x-3">
           <TouchableOpacity
-              className={`h-10 flex flex-row rounded-lg px-4 items-center justify-center ${colorScheme === "light" ? "bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
-              onPress={() => {
-                setView('market')
-              }}
+            className={`h-10 flex flex-row rounded-lg px-4 items-center justify-center ${colorScheme === "light" ? "bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
+            onPress={() => {
+              setView('overview')
+            }}
           >
-            <Text className="text-[#9CA3AF]">Market PLace</Text>
+            <Text className={`text-[#9CA3AF] ${view === 'overview' && 'text-primary_900 font-semibold'}`}>Overview</Text>
           </TouchableOpacity>
           <TouchableOpacity
-              className={`h-10 flex flex-row rounded-lg px-4 items-center justify-center ${colorScheme === "light" ? "bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
-              onPress={() => {
-                setView('events')
-              }}
+            className={`h-10 flex flex-row rounded-lg px-4 items-center justify-center ${colorScheme === "light" ? "bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
+            onPress={() => {
+              setView('market')
+            }}
+          >
+            <Text className={`text-[#9CA3AF] ${view === 'market' && 'text-primary_900 font-semibold'}`}>Market PLace</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            className={`h-10 flex flex-row rounded-lg px-4 items-center justify-center ${colorScheme === "light" ? "bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
+            onPress={() => {
+              setView('events')
+            }}
           >
             <Text className="text-[#9CA3AF]">Event</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-              className={`h-10 flex flex-row rounded-lg px-4 items-center justify-center ${colorScheme === "light" ? "bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
-              onPress={() => {
-                router.push('/create-community')
-              }}
-          >
-            <Text className="text-[#9CA3AF]">Create New</Text>
-            <SVGPlus />
           </TouchableOpacity>
         </View>
       </View>
