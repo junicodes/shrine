@@ -8,7 +8,7 @@ import { FormPayload_SignIn } from '@/types/auth'
 import { Formik } from 'formik'
 import React, { useState } from 'react'
 import { Button, } from 'react-native-paper';
-import { TextInput, View, useColorScheme, Image, ScrollView } from 'react-native';
+import { TextInput, View, useColorScheme, Image, ScrollView, Text } from 'react-native';
 import { router } from 'expo-router';
 import PageHeader from '@/components/shared/PageHeader';
 import DropDownPicker from 'react-native-dropdown-picker';

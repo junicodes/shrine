@@ -17,12 +17,12 @@ interface Product {
 
 const ProductsList = () => {
     const renderItem = ({ item }: { item: { img: any, title: string, price: string } }) => (
-        <View className='w-[50%]' >
+        <View className='w-[49.5%]' >
             <Pressable onPress={() => router.push(`/details`)}>
                 <View className={``}>
-                    <Image source={offlineImage.onboarding1} className={`w-full rounded-[8.87px] h-[250px]`} />
-                    <ThemedText className='font-normal text-sm leading-5'>{item.title}</ThemedText>
-                    <ThemedText className={`font-normal text-xs leading-4`}>{item.price}</ThemedText>
+                    <Image source={offlineImage.onboarding1} className={`w-full h-[210px]`} />
+                    <ThemedText className='font-normal text-sm leading-5 px-2 pt-2'>{item.title}</ThemedText>
+                    <ThemedText className={`font-normal text-xs leading-4 px-2`}>{item.price}</ThemedText>
                 </View>
             </Pressable>
         </View>
@@ -47,10 +47,9 @@ export default ProductsList
 
 const styles = StyleSheet.create({
     columnWrapper: {
-
         justifyContent: 'space-between',
         marginBottom: 16,
-        gap: 10
+        gap: 5
     },
     flatlistPadding: {
         marginBottom: hp("22")

@@ -20,13 +20,13 @@ const Home = () => {
   const [view, setView] = useState<string>('market');
 
   return (
-    <ThemedView>
-      <View className='flex flex-row items-center py-5' style={headerView}>
+    <ThemedView className="px-0">
+      <View className='flex flex-row items-center py-5 px-4' style={headerView}>
         <View className=''>
           <ThemedText type='subtitle' className=' font-normal text-base leading-6'>Good morning,</ThemedText>
           <View className='flex gap-2 flex-row mt-1 items-center'>
             <Image source={offlineImage.user_avatar} className='w-[27px] h-[27px]' />
-            <ThemedText className='font-bold text-lg leading-6'>Okey Boy</ThemedText>
+            <ThemedText className='font-bold text-lg leading-6'>Okechukwu</ThemedText>
           </View>
         </View>
         <View className='flex-row gap-4 justify-center'>
@@ -34,7 +34,7 @@ const Home = () => {
           <SVGNotification />
         </View>
       </View>
-      <View className="mt-6 mb-5">
+      <View className="mt-6 mb-5 px-4">
         <View className="flex-row justify-start !space-x-3">
           <TouchableOpacity
             className={`h-10 flex flex-row rounded-lg px-4 items-center justify-center ${colorScheme === "light" ? "bg-[#F9FAFB]" : "border border-gray-500 bg-none"}`}
