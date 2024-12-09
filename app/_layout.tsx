@@ -42,7 +42,9 @@ export default function RootLayout() {
         <Stack.Screen name='singlePage' options={{ headerShown: false }} />
         <Stack.Screen name='settings' options={{ headerShown: false }} />
         <Stack.Screen name='account' options={{ headerShown: false }} />
+        <Stack.Screen name='checkout' options={{ headerShown: false }} />
         <Stack.Screen name='details' options={{ headerShown: false }} />
+        <Stack.Screen name='sellerProfile' options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>

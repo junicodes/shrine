@@ -20,7 +20,7 @@ export default function TabLayout() {
         tabBarStyle: {
           backgroundColor: Colors[colorScheme ?? 'light'].background,
           borderColor: Colors[colorScheme ?? 'light'].tabBorder,
- 
+
         },
       }}>
       <Tabs.Screen
@@ -62,7 +62,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="profile"
         options={{
-          title: 'Profile',
+          // title: 'Profile',
           tabBarIcon: ({ color, focused }) => (
             <SVGProfile fill={focused ? color : iconDefaultColor} />
           ),

@@ -69,7 +69,7 @@ export const carouselImg = [
 
 export const detailsCarousel = [
     { uri: offlineImage.emptyCardImg },
-    { uri: offlineImage.emptyCardImg },
+    { uri: offlineImage.shoes },
     { uri: offlineImage.emptyCardImg },
 ];
 
