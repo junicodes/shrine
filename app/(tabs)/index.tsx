@@ -13,11 +13,15 @@ import SVGSearch from '@/components/svg/SVGSearch';
 import SVGPlus from '@/components/svg/SVGPlus';
 import { useColorScheme } from 'nativewind';
 import { router } from "expo-router";
+import Overview from "@/components/Overview";
+import EventsList from "@/components/EventsList";
+import EventsCategoryList from "@/components/EventsCategoryList";
+import Events from "@/components/Events";
 
 const Home = () => {
   const { headerView } = globalStyles();
   const { colorScheme, setColorScheme } = useColorScheme();
-  const [view, setView] = useState<string>('market');
+  const [view, setView] = useState<string>('overview');
 
   return (
     <ThemedView className="px-0">
@@ -58,10 +62,14 @@ const Home = () => {
               setView('events')
             }}
           >
-            <Text className="text-[#9CA3AF]">Event</Text>
+            <Text className={`text-[#9CA3AF] ${view === 'events' && 'text-primary_900 font-semibold'}`}>Event</Text>
           </TouchableOpacity>
         </View>
       </View>
+
+      {view === 'overview' && (
+        <Overview />
+      )}
 
       {view === 'market' && (
         <>
@@ -71,6 +79,20 @@ const Home = () => {
           <View className={`my-4 pb-12`}>
             <ProductsList />
           </View>
+        </>
+      )}
+
+      {view === 'events' && (
+        <>
+          <View className={`my-1`}>
+            <EventsCategoryList />
+          </View>
+          <View className={`my-4 pb-12`}>
+            <Events />
+          </View>
+          <Pressable className={`absolute bottom-8 right-5 bg-primary_900 rounded-full w-[50px] h-[50px] flex-row justify-center items-center`}>
+            <Image source={offlineImage.white_plus} className="w-6 h-6" />
+          </Pressable>
         </>
       )}
     </ThemedView>

@@ -57,6 +57,14 @@ export const offlineImage = {
     red_color_user: require('../assets/images/red_color_user.png'),
     red_color_email: require('../assets/images/red_email.png'),
     red_color_phone: require('../assets/images/red_phone.png'),
+    we_the_people: require('../assets/images/we_the_people.png'),
+    rave: require('../assets/images/rave.png'),
+    events_all: require('../assets/images/events_all.png'),
+    events_air: require('../assets/images/events_air.png'),
+    events_music: require('../assets/images/events_music.png'),
+    purple_location: require('../assets/images/purple_location.png'),
+    purple_calendar: require('../assets/images/purple_calendar.png'),
+    white_plus: require('../assets/images/white_plus.png'),
     //Dark
     goBackDark: require('../assets/images/go-back-l.png'),
 } as any
