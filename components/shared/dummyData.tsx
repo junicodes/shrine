@@ -160,6 +160,12 @@ export const detailsCarousel = [
     { uri: offlineImage.emptyCardImg },
 ];
 
+export const eventDetailsCarousel = [
+    { uri: offlineImage.rave },
+    { uri: offlineImage.onboarding1 },
+    { uri: offlineImage.onboarding2 },
+];
+
 export const colors = [
     "#ECECEC",
     "#2D2F2E",
