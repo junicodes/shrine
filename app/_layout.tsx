@@ -46,6 +46,7 @@ export default function RootLayout() {
         <Stack.Screen name='details' options={{ headerShown: false }} />
         <Stack.Screen name='sellerProfile' options={{ headerShown: false }} />
         <Stack.Screen name='event-details' options={{ headerShown: false }} />
+        <Stack.Screen name='book-event' options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>

@@ -5,17 +5,17 @@ import { Href, router } from 'expo-router';
 import { useColorScheme } from "nativewind";
 import { TabBarIcon } from "../navigation/TabBarIcon";
 
-const GoBack = ({route}: {route: Href<string | object>}) => {
+const GoBack = ({ route }: { route: Href }) => {
     const { colorScheme } = useColorScheme();
 
     return <>
-        <Pressable 
+        <Pressable
             style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
-            })} 
+            })}
             onPress={() => router.replace(route)}
         >
-            <Image source={colorScheme === "light" ? offlineImage.goBackDark : offlineImage.goBackLight } />
+            <Image source={colorScheme === "light" ? offlineImage.goBackDark : offlineImage.goBackLight} />
         </Pressable>
     </>;
 };

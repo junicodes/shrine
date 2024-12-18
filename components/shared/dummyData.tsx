@@ -162,8 +162,8 @@ export const detailsCarousel = [
 
 export const eventDetailsCarousel = [
     { uri: offlineImage.rave },
-    { uri: offlineImage.onboarding1 },
-    { uri: offlineImage.onboarding2 },
+    { uri: offlineImage.shoes },
+    { uri: offlineImage.rave },
 ];
 
 export const colors = [
@@ -176,3 +176,21 @@ export const colors = [
 ];
 
 export const sizes = ['S', 'M', 'L', 'XL'];
+
+export const eventsInfo = [
+    {
+        uri: offlineImage.light_purple_calendar,
+        events_bold: 'Monday, December 12, 2024',
+        events_light: '18.00 - 23.00 PM (GMT +07:00)',
+    },
+    {
+        uri: offlineImage.light_purple_location,
+        events_bold: 'Grand Park, Adelaide, Australia',
+        events_light: 'Grand City St. 100, Adelaide, Australia.',
+    },
+    {
+        uri: offlineImage.purple_ticket,
+        events_bold: '$50.00',
+        events_light: 'Ticket price',
+    },
+];

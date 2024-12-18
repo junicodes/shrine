@@ -41,7 +41,7 @@ const DetailsPage = () => {
 
   return (
     <ThemedView className={`p-2 flex-1`}>
-      <PageHeader title="Details" headerShown goBackUrl={`/(tabs)/`} />
+      <PageHeader title="Details" headerShown goBackUrl={`/event-details`} />
       <ScrollView
         contentContainerStyle={{ paddingBottom: 20 }}
         showsVerticalScrollIndicator={false}
