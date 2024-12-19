@@ -14,7 +14,7 @@ module.exports = {
         gret_50: '#F9FAFB',
         grey_4f6: '#F4F4F6',
         natural_grey_900: '#1D2739',
-        primary_900: '#761022',
+        primary_900: '#8F5FED',
         primary_50: '#F1E7E9',
         others_red: '#E22E31',
         other_8b: '#64748B',

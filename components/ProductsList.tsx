@@ -9,11 +9,7 @@ import {
 } from "react-native-responsive-screen";
 import { offlineImage } from '@/constants/images';
 
-interface Product {
-    img: any;
-    title: string;
-    price: string;
-};
+
 
 const ProductsList = () => {
     const renderItem = ({ item }: { item: { img: any, title: string, price: string } }) => (

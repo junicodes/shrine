@@ -89,3 +89,18 @@ export const banterList = [
         msg: 'Payment already sent, report if any problem',
     },
 ];
+
+export const weThePeopleCommunities = [
+    {
+        img: offlineImage.rave,
+    },
+    {
+        img: offlineImage.rave,
+    },
+    {
+        img: offlineImage.rave,
+    },
+    {
+        img: offlineImage.rave,
+    },
+];

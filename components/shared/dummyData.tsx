@@ -23,6 +23,33 @@ export const productCategory = [
     },
 ];
 
+export const eventsCategory = [
+    {
+        image: offlineImage.events_all,
+        name: "All",
+    },
+    {
+        image: offlineImage.events_music,
+        name: "Music",
+    },
+    {
+        image: offlineImage.events_air,
+        name: "Trips",
+    },
+    {
+        image: offlineImage.events_all,
+        name: "All",
+    },
+    {
+        image: offlineImage.events_music,
+        name: "Music",
+    },
+    {
+        image: offlineImage.events_air,
+        name: "Trips",
+    },
+];
+
 export const products = [
     {
         img: offlineImage.emptyCardImg,
@@ -36,8 +63,8 @@ export const products = [
     },
     {
         img: offlineImage.emptyCardImg,
-        title: "Synthetic Leather Round Shoulder Bag",
-        price: "$30.42",
+        title: "La Vida Loca Concert",
+        price: "$12.63",
     },
     {
         img: offlineImage.emptyCardImg,
@@ -60,6 +87,66 @@ export const products = [
         price: "$26.42",
     },
 ];
+
+export const events = [
+    {
+        img: offlineImage.rave,
+        title: "La Vida Loca Concert",
+        calendar_img: offlineImage.purple_calendar,
+        location_img: offlineImage.purple_location,
+        date: 'Dec. 12, 2024',
+        location: 'Adelaide, Australia',
+    },
+    {
+        img: offlineImage.emptyCardImg,
+        title: "La Vida Loca Concert",
+        calendar_img: offlineImage.purple_calendar,
+        location_img: offlineImage.purple_location,
+        date: 'Dec. 12, 2024',
+        location: 'Adelaide, Australia',
+    },
+    {
+        img: offlineImage.emptyCardImg,
+        title: "La Vida Loca Concert",
+        calendar_img: offlineImage.purple_calendar,
+        location_img: offlineImage.purple_location,
+        date: 'Dec. 12, 2024',
+        location: 'Adelaide, Australia',
+    },
+    {
+        img: offlineImage.emptyCardImg,
+        title: "La Vida Loca Concert",
+        calendar_img: offlineImage.purple_calendar,
+        location_img: offlineImage.purple_location,
+        date: 'Dec. 12, 2024',
+        location: 'Adelaide, Australia',
+    },
+    {
+        img: offlineImage.emptyCardImg,
+        title: "La Vida Loca Concert",
+        calendar_img: offlineImage.purple_calendar,
+        location_img: offlineImage.purple_location,
+        date: 'Dec. 12, 2024',
+        location: 'Adelaide, Australia',
+    },
+    {
+        img: offlineImage.emptyCardImg,
+        title: "La Vida Loca Concert",
+        calendar_img: offlineImage.purple_calendar,
+        location_img: offlineImage.purple_location,
+        date: 'Dec. 12, 2024',
+        location: 'Adelaide, Australia',
+    },
+    {
+        img: offlineImage.emptyCardImg,
+        title: "La Vida Loca Concert",
+        calendar_img: offlineImage.purple_calendar,
+        location_img: offlineImage.purple_location,
+        date: 'Dec. 12, 2024',
+        location: 'Adelaide, Australia',
+    },
+];
+
 
 export const carouselImg = [
     offlineImage.emptyCardImg,
