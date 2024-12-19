@@ -65,6 +65,11 @@ export const offlineImage = {
     purple_location: require('../assets/images/purple_location.png'),
     purple_calendar: require('../assets/images/purple_calendar.png'),
     white_plus: require('../assets/images/white_plus.png'),
+    group_profile: require('../assets/images/profile_group.png'),
+    right_arrow: require('../assets/images/right_arrow.png'),
+    purple_ticket: require('../assets/images/purple_ticket.png'),
+    light_purple_calendar: require('../assets/images/light_purple_calendar.png'),
+    light_purple_location: require('../assets/images/light_purple_location.png'),
     //Dark
     goBackDark: require('../assets/images/go-back-l.png'),
 } as any

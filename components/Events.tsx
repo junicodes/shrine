@@ -26,7 +26,7 @@ const Events = () => {
         };
     }) => (
         <View className="w-[49.5%]">
-            <Pressable onPress={() => router.push(`/details`)}>
+            <Pressable onPress={() => router.push(`/event-details`)}>
                 <View className={``}>
                     <Image
                         source={offlineImage.rave}
